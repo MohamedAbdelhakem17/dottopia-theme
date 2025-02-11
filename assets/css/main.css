@@ -1,0 +1,49 @@
+/* Reset and Basic Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Full Page Layout */
+.site-header {
+    background: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.site-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Footer at the bottom */
+.site-footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+}
+
+
+/* Sticky Footer */
+html,
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-content {
+    flex-grow: 1;
+}

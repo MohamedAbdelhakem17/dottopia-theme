@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+    /* Extend Color  */
+    --color-main: #FFCB00;
+    --color-digital: #FFCE26;
+    --color-seo: #745BA3;
+    --color-performance: #009264;
+
+    /* Extend Font Family */
+    --font-main: "Hanuman";
+    --font-sub: "Roboto"
+}

@@ -1,0 +1,13 @@
+{
+    "intelephense.diagnostics.undefinedFunctions": false,
+    "php.stubs": [
+        "wordpress",
+        "*"
+    ],
+    "cSpell.words": [
+        "ABSPATH",
+        "Dottopia",
+        "fontawesome",
+        "shortlink"
+    ]
+}
