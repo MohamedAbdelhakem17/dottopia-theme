@@ -13,5 +13,15 @@
 
     /* Extend Font Family */
     --font-main: "Hanuman";
-    --font-sub: "Roboto"
+    --font-sub: "Roboto";
+
+    /* Extend shadow */
+    --shadow-custom: 0 10px 80px 20px #cca51e;
+
+    /* Extend Animation */
+    --animate-spinSlow: spin 60s linear infinite;
+    /* Variables */
+    --gradient: linear-gradient(85.91deg, #FFD546 33.16%, #FFE89B 99.65%);
+
+
 }

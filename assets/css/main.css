@@ -3,7 +3,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    overflow-x: hidden;
 }
 
 /* Full Page Layout */
@@ -23,15 +23,10 @@ html {
 
 .site-content {
     flex: 1;
-    padding: 20px;
 }
 
 /* Footer at the bottom */
 .site-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
     position: relative;
     width: 100%;
 }
@@ -47,3 +42,14 @@ body {
 .site-content {
     flex-grow: 1;
 }
+
+/* Custom Style  */
+
+.roadblocks {
+    background-image: url('../image/background_image/Group.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+
