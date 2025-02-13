@@ -22,7 +22,7 @@
     </div>
 
 
-    <?php include "test.php"; ?>
+
 
 
 </section>

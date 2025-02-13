@@ -17,6 +17,8 @@
     <?php include get_template_directory() . '/components/Home/Book/book.php'; ?>
     <!-- Testimonial Section -->
     <?php include get_template_directory() . '/components/Home/Testimonial/testimonial.php'; ?>
+    <!-- Case Studies Section -->
+    <?php include get_template_directory() . '/components/Home/CaseStudies/caseStudies.php'; ?>
     <!-- Insights Section -->
     <?php include get_template_directory() . '/components/Home/Insights/insights.php'; ?>
     <!-- Discover Section -->
