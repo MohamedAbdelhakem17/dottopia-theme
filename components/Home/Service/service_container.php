@@ -30,7 +30,7 @@ function renderContainer($data)
 ?>
 
     <section class="py-2 my-10">
-        <div class=" grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-0 items-center img-container">
+        <div class=" grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-0 items-center service-container">
             <!-- Info Section -->
             <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info">
 
@@ -60,7 +60,7 @@ function renderContainer($data)
 
             <!-- Image Container -->
             <div class="px-4 md:px-8 col-span-1 md:col-span-1">
-                <img src="<?= get_template_directory_uri() . $image ?>" alt="<?= $title ?>" class="w-fit">
+                <img src="<?= get_template_directory_uri() . $image ?>" alt="<?= $title ?>" class="w-full img object-cover">
             </div>
         </div>
     </section>

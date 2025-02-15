@@ -23,6 +23,8 @@
     <?php include get_template_directory() . '/components/Home/Insights/insights.php'; ?>
     <!-- Discover Section -->
     <?php include get_template_directory() . '/components/Home/Discover/discover.php'; ?>
+
+
 </main>
 
 <?php get_footer(); ?>

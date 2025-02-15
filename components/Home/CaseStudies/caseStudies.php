@@ -39,14 +39,14 @@ $case_2 = get_template_directory_uri() . '/assets/image/cases/case_2.png'; // Re
     <div class="px-4">
         <!-- Header -->
         <div class="text-center">
-            <h3 class="text-[16px] font-bold mb-[14px] md:mb-[16px] font-sub">Case Studies</h3>
-            <p class="mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] font-main">
+            <h3 class="text-[16px] font-bold mb-[14px] md:mb-[16px] font-sub title" >Case Studies</h3>
+            <p class="mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] font-main description">
                 Real Results, Real Feedback. <br class="hidden md:block" /> Hear From our Clients.
             </p>
         </div>
 
         <?php foreach ($case_studies as $case): ?>
-            <div class="bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10">
+            <div class="bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10 fade">
                 <!-- heading -->
                 <div class="flex flex-wrap justify-between items-center py-4 px-10">
                     <h3 class="font-bold font-main text-2xl md:text-3xl"><?php echo $case['title']; ?></h3>
@@ -58,8 +58,10 @@ $case_2 = get_template_directory_uri() . '/assets/image/cases/case_2.png'; // Re
                     </div>
                 </div>
 
+
                 <!-- content -->
-                <div class="p-4 rounded-lg border-transparent border-[2px] border-t-main grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 px-10">
+                <div class="line"></div>
+                <div class="p-4 rounded-lg border-transparent border-[2px] border-t-main grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 px-10 ">
                     <!-- Image -->
                     <div class="lg:col-span-2 md:col-span-5 self-center">
                         <img src="<?php echo $case['image']; ?>" alt="Photography" class="w-full object-cover rounded-md" />

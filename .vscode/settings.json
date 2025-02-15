@@ -8,6 +8,8 @@
         "ABSPATH",
         "Dottopia",
         "fontawesome",
+        "gsap",
+        "inview",
         "jfif",
         "shortlink"
     ]

@@ -9,14 +9,14 @@
 
         <!-- Info Text -->
         <div class="w-full px-3">
-            <h3 class="text-[16px] font-bold text-main mb-[14px]">Who We Are</h3>
+            <h3 class="text-[16px] font-bold text-main mb-[14px] title">Who We Are</h3>
 
-            <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 font-main">
+            <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 font-main title">
                 Explore Our <br class="hidden md:block" />
                 Marketing Strategies
             </p>
 
-            <p class="py-3 md:py-6 font-normal text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%]">
+            <p class="py-3 md:py-6 font-normal text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] description">
                 We’re here to make your online presence unforgettable with creative
                 strategies that get results.
             </p>

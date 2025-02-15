@@ -23,7 +23,7 @@ $blogs = [
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
     <?php foreach ($blogs as $blog) : ?>
-        <div class="relative overflow-hidden rounded-md">
+        <div class="relative overflow-hidden rounded-md BLOG">
 
             <!-- Image -->
             <img src="<?php echo esc_url($blog['image']); ?>" alt="<?php echo esc_attr($blog['title']); ?>" class="fit-full w-full" loading="lazy" />

@@ -1,13 +1,13 @@
 <?php require_once 'roadblocks_card.php'; ?>
 
 <section class="roadblocks py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-main/50 after:shadow-custom after:rounded-full after:w-[30px]  after:h-[30px] after:translate-x-[50%]">
-    <div class="container mx-auto px-4 py-5">
+    <div class="container mx-auto px-4 py-5 img-container">
         <div>
-            <h2 class="text-center font-bold text-white text-[25px] md:text-[40px] font-main mb-[14px] leading-10">
+            <h2 class="text-center font-bold text-white text-[25px] md:text-[40px] font-main mb-[14px] leading-10 title">
                 Digital Roadblocks? <br class="hidden md:block" />
                 No Problem
             </h2>
-            <p class="font-normal text-[13px] text-center text-white leading-[22.4px] font-sub md:w-[80%] mx-auto">
+            <p class="font-normal text-[13px] text-center text-white leading-[22.4px] font-sub md:w-[80%] mx-auto description">
                 Without consistent site traffic, you're missing out on valuable visitors, leads, and revenue. Thankfully, custom SEO solutions can get you back <br class="hidden md:block" /> on track by boosting your presence in search engine
             </p>
         </div>

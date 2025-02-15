@@ -1,82 +1,144 @@
-const { animate, scroll } = Motion;
+
+const { animate, scroll, inView } = Motion;
 
 
-// Animating image and header inside each section
-document.querySelectorAll(".img-container").forEach((section) => {
+// Animating Services
+document.querySelectorAll(".service-container").forEach((section) => {
     const header = section.querySelector(".info");
     const image = section.querySelector("img");
 
-    // Scroll animation for header (fade in/out & vertical movement)
     scroll(
         animate(header, {
-            y: [-100, 0, 100], // Moves up, stays in place, moves down
-            opacity: [0, 1, 0] // Fades in and out
+            y: [-100, 0, 100],
+            opacity: [0, 1, 0]
         }, { ease: "easeInOut" }),
         { target: section }
     );
 
-    // Scroll animation for image (vertical movement)
     scroll(
         animate(image, {
-            y: [-50, 50], // Moves slightly up and down
-            opacity: [0, 1, 0] // Fades in
+            y: [-50, 50],
+            opacity: [0, 1, 0]
         }, { ease: "easeInOut" }),
         { target: section }
     );
 });
 
-const cards = document.querySelectorAll(".card");
-let allCardsVisible = false;
 
-// Animate each card appearing one after another
-cards.forEach((card, index) => {
+// Animating Roadblocks
+document.querySelectorAll(".card").forEach((card, index) => {
     scroll(
         animate(card, {
-            opacity: [0, 1, 0], // Fade in
-            y: [20, 0] // Move up
+            opacity: [0, 1, 0],
+            y: [20, 0]
         }, {
             duration: 0.8,
             easing: "ease-out",
-            delay: index * .2 // Staggered effect
+            delay: index * .2
         }),
         { target: card }
     );
 });
 
-// Detect when all cards are fully visible, then allow scrolling
-const observer = new IntersectionObserver((entries) => {
-    if (entries.every(entry => entry.isIntersecting)) {
-        allCardsVisible = true;
-    }
-}, { threshold: 1 });
-
-observer.observe(cards[cards.length - 1]); // Watch the last card
-
-
-jQuery(document).ready(function ($) {
-    $(".testimonial-carousel").slick({
-        centerMode: true,
-        infinite: true,
-        centerPadding: "20%",
-        slidesToShow: 1,
-        speed: 500,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        arrows: false,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    centerPadding: "10%",
-                },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    centerPadding: "5%",
-                },
-            },
-        ],
-    });
+// Animating Partner 
+document.querySelectorAll(".partner").forEach((partner, index) => {
+    scroll(
+        animate(partner, {
+            opacity: [0, 1, 0],
+            scale: [1.3, 1, 0],
+            y: [-50, 0, 50],
+        }, {
+            duration: 1,
+            easing: "ease-in-out",
+            delay: index * .5
+        }),
+        { target: partner }
+    );
 });
+
+
+
+
+document.querySelectorAll('.title, .description').forEach((element, index) => {
+    const animation = animate(
+        element,
+        { opacity: [0, 1, 1], y: [10, 0, 0] },
+        { duration: 0.5, delay: 0.2 }
+    );
+    scroll(animation, { target: element });
+});
+
+
+
+
+// Animating Partner 
+document.querySelectorAll(".BLOG").forEach((partner, index) => {
+    scroll(
+        animate(partner, {
+            opacity: [0, 1, 1],
+            scale: [.7, 1, 1],
+            translateX: [-20, 0, 0],
+            y: [-50, 0, 0],
+            offset: "center"
+        }, {
+            duration: 1,
+            easing: "ease-in-out",
+            delay: index * .1
+        }),
+        { target: partner }
+    );
+});
+
+
+// Fade in out Animation
+document.querySelectorAll('.fade').forEach((element, index) => {
+    const animation = animate(
+        element,
+        { opacity: [0, 1, 0] },
+        { duration: 1, delay: index * 0.2 }
+    );
+    scroll(animation, { target: element });
+});
+
+
+
+
+// Animations for header text
+inView("[data-inview='text-fadeInUp']", (element) => {
+    animate(
+        element,
+        { opacity: 1, y: [100, 0] },
+        {
+            duration: 1.0,
+            easing: [0.17, 0.55, 0.55, 1],
+        }
+    );
+    return () => animate(element, { opacity: 0, y: 100 });
+});
+
+// Animations for paragraph text
+inView("[data-inview='text-fadeInUp']", (element) => {
+    animate(
+        element,
+        { opacity: 1, y: [100, 0] },
+        {
+            duration: 1.2,
+            easing: [0.17, 0.55, 0.55, 1],
+        }
+    );
+    return () => animate(element, { opacity: 0, y: 100 });
+});
+
+// Animations for the button
+inView("[data-inview='button-fadeInUp']", (element) => {
+    animate(
+        element,
+        { opacity: 1, y: [100, 0] },
+        {
+            duration: 1.4,
+            easing: [0.17, 0.55, 0.55, 1],
+        }
+    );
+    return () => animate(element, { opacity: 0, y: 100 });
+});
+

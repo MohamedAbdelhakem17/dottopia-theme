@@ -25,7 +25,7 @@
     $logo_url = get_template_directory_uri() . '/assets/image/logo.png';
     ?>
 
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300 py-2 px-5">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 py-2 px-5">
         <div class="container mx-auto flex justify-between items-center px-5 md:px-10">
             <div class="brand">
                 <a href="<?php echo home_url('/'); ?>">
@@ -43,7 +43,7 @@
                 <ul class="flex flex-col md:flex-row items-start md:items-center gap-y-5 md:gap-y-0 gap-x-5 w-full md:w-auto py-3 md:py-0">
                     <?php foreach ($menu_items as $item) : ?>
                         <li>
-                            <a href="<?php echo esc_url($item['path']); ?>" class="text-main font-roboto font-normal text-[16px] hover:text-primary transition-all duration-300 flex items-center gap-1">
+                            <a href="<?php echo esc_url($item['path']); ?>" class="text-black font-roboto font-normal text-[16px] hover:text-primary transition-all duration-300 flex items-center gap-1">
                                 <?php echo esc_html($item['name']); ?>
                             </a>
                         </li>
@@ -62,52 +62,4 @@
             var menu = document.getElementById('menu');
             menu.classList.toggle('hidden');
         });
-
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('navbar');
-
-            if (!navbar) return; // Ensure navbar exists
-
-            const link = navbar.querySelectorAll('a');
-
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white', 'shadow-md');
-                navbar.classList.remove('bg-transparent');
-
-                if (link) {
-                    link.forEach(l => {
-                        l.classList.add('text-black');
-                        l.classList.remove('text-main');
-                    })
-                }
-            } else {
-                navbar.classList.add('bg-transparent');
-                navbar.classList.remove('bg-white', 'shadow-md');
-
-                if (link) {
-                    link.forEach(l => {
-                        l.classList.add('text-main');
-                        l.classList.remove('text-black');
-                    })
-                }
-            }
-        });
     </script>
-
-
-
-
-    <?php
-
-
-    // wp_nav_menu(array(
-    //     'menu' => 'primary',
-    //     'theme_location' => 'primary',
-    //     'menu_id'        => 'primary-menu',
-    //     'container'      => 'nav',
-    //     'items_wrap'     => '<ul className="flex flex-col md:flex-row items-start md:items-center gap-y-5 md:gap-y-0 gap-x-5 w-full md:w-auto py-3 md:py-0">%3$s</ul>',
-    // ));
-
-
-
-    ?>
