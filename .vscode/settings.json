@@ -1,0 +1,13 @@
+{
+    "php.stubs": [
+        "wordpress",
+        "*"
+    ],
+    "cSpell.words": [
+        "ABSPATH",
+        "customizer",
+        "dashicons",
+        "Dottopia",
+        "inview"
+    ]
+}
