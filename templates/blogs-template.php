@@ -108,7 +108,7 @@
                                 <p class="text-main text-start text-[13px] font-light py-4">
                                     <?php echo esc_html($category); ?>
                                 </p>
-                                <h3 class="font-main text-white font-bold text-2xl text-start">
+                                <h3 class="hanuman-font text-white font-bold text-2xl text-start">
                                     <a href="<?php echo esc_url(get_permalink($post_id)); ?>"> <?php echo esc_html($title); ?></a>
                                 </h3>
                                 <p class="text-main text-end text-[13px]">

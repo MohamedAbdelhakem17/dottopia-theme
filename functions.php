@@ -12,4 +12,5 @@ require_once(get_template_directory() . '/inc/load-assets.php');
 require_once(get_template_directory() . '/inc/menus-setup.php');
 require_once(get_template_directory() . '/inc/widgets_setup.php');
 require_once(get_template_directory() . '/inc/single-page-setup.php');
+require_once(get_template_directory() . '/helpers/change-color.php');
 

@@ -12,6 +12,9 @@
         $job_location = get_field('job_location') ?? '';
         $job_time_type = get_field('job_time_type') ?? '';
         $job_level = get_field('job_level') ?? '';
+        $job_title = get_field('job_title') ?? '';
+        $categories = get_the_category(get_post(get_the_ID()));
+        $category = !empty($categories) ? $categories[0]->name : 'main';
 
         // Responsibilities and skills handling
         $responsibilities =  get_field("responsibilities");
@@ -19,7 +22,7 @@
         function render_list($items)
         {
             if (empty($items)) return '';
-            $output = '<ul class="list-disc pl-5 py-2">';
+            $output = '<ul class="list-disc pl-5 py-2"data-aos="fade-in" data-aos-delay="500"> ';
             foreach ($items as $item) {
                 $output .= '<li class="py-3 font-normal text-[20px]">' . esc_html($item["item"]) . '</li>';
             }
@@ -32,32 +35,38 @@
         <section class="bg-[#FFF9E5] py-5"
             style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/backgrounds/dottopia_career.png') center right/contain  no-repeat, #FFF9E5">
             <div class=" container mx-auto flex flex-col items-start justify-center min-h-[70vh]">
-                <p class="text-[16px] font-bold uppercase">Jobs / Digital Communication</p>
-                <h2 class="text-5xl font-bold text-main mt-4 mb-6">Senior Graphic Designer</h2>
-                <p class=" text-lg leading-relaxed mb-4 md:w-[50%] font-normal">
+                <p class="text-[16px] font-bold uppercase" data-aos="fade-down"
+                    data-aos-anchor-placement="top-bottom">Jobs / <?= $category ?></p>
+                <h2 class="text-5xl font-bold text-main mt-4 mb-6" data-aos="fade-right"
+                    data-aos-anchor-placement="top-bottom"><?= $job_title ?></h2>
+                <p class=" text-lg leading-relaxed mb-4 md:w-[50%] font-normal" data-aos="fade-left"
+                    data-aos-anchor-placement="top-bottom">
                     <?php echo esc_html($content); ?>
                 </p>
-                <p class=" font-[500] mt-4  text-[18px]">
+                <p class=" font-[500] mt-4  text-[18px]" data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom">
                     <?php echo esc_html($job_location); ?> • <?php echo esc_html($job_time_type); ?> • <?php echo esc_html($job_level); ?>
                 </p>
-                <a href="#" class="mt-6 inline-block bg-black text-white py-2 px-6 rounded-lg text-lg font-normal">Apply Now</a>
+                <a href="#" class="mt-6 inline-block bg-black text-white py-2 px-6 rounded-lg text-lg font-normal" data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom">Apply Now</a>
             </div>
         </section>
 
         <!-- Main Data -->
         <section class="container mx-auto py-8 px-4">
             <!-- Responsibilities Section -->
-            <h2 class="text-main text-[40px] font-bold py-5">Responsibilities</h2>
+            <h2 class="text-main text-[40px] font-bold py-5" data-aos="fade-down">Responsibilities</h2>
             <?php echo render_list($responsibilities); ?>
 
             <!-- Skills and Qualifications Section -->
-            <h2 class="text-main text-[40px] font-bold py-5">Skills and Qualifications</h2>
+            <h2 class="text-main text-[40px] font-bold py-5" data-aos="fade-down">Skills and Qualifications</h2>
             <?php echo render_list($skills_and_qualifications); ?>
             </div>
             <!-- Apply Button -->
 
             <div class="mt-6">
-                <a href="#" target="_blank"
+                <a href="#" target="_blank" data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
                     class="w-fit block bg-main text-black py-2 px-6 rounded-lg text-lg font-normal mx-auto">
                     Apply Now
                 </a>

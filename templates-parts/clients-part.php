@@ -9,20 +9,22 @@ function Clients($color = "text-main", $number_color = "text-black", $background
 ?>
     <section class="relative py-4">
         <div class="transform -translate-y-[50%] w-[90%] mx-auto bg-white rounded-md py-[10px]">
-            <p class="text-center <?php echo esc_attr($color); ?> font-bold my-2 text-[22px] md:text-[26px] title"> Clients </p>
+            <div data-aos="fade-up" data-aos-offset="50">
+                <p class="text-center <?php echo esc_attr($color); ?> font-bold my-2 text-[22px] md:text-[26px] title"> Clients </p>
 
-            <p class="font-bold text-[23px] md:text-4xl text-center font-main leading-[25px] md:leading-[40px] description">
-                Trusted by over
-                <span class="<?php echo esc_attr($number_color); ?> p-2 inline-block" style="
-                    background-image: url('<?php echo esc_url($background); ?>'); 
-                    background-position: center; 
-                    background-size: 100% 100%; 
-                    background-repeat: no-repeat;">
-                    100+
-                </span>
-                <br class="hidden md:block" /> clients in various industries
-            </p>
-            
+                <p class="font-bold text-[23px] md:text-4xl text-center hanuman-font leading-[25px] md:leading-[40px] description">
+                    Trusted by over
+                    <span class="<?php echo esc_attr($number_color); ?> p-2 inline-block" style="
+                        background-image: url('<?php echo esc_url($background); ?>'); 
+                        background-position: center; 
+                        background-size: 100% 100%; 
+                        background-repeat: no-repeat;">
+                        100+
+                    </span>
+                    <br class="hidden md:block" /> clients in various industries
+                </p>
+            </div>
+
         </div>
 
         <section>

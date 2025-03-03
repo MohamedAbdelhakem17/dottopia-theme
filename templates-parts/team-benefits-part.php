@@ -23,15 +23,15 @@ $benefits = [
 <section class="roadblocks py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-main/50 after:shadow-custom after:rounded-full after:w-[30px]  after:h-[30px] after:translate-x-[50%]">
     <div class="container mx-auto px-4 py-5 img-container">
         <div>
-            <h2 class="text-center font-bold text-white text-[25px] md:text-[40px] font-main mb-[14px] leading-10 title">
+            <h2 class="text-center font-bold text-white text-[25px] md:text-[40px] hanuman-font mb-[14px] leading-10 title" data-aos="fade-down">
                 Benefits of Joining our Team
             </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 md:mt-32 justify-center">
             <?php foreach ($benefits as $benefit): ?>
-                <div class="col-span-1 relative p-4 card">
-                    <?php if (end($benefits) !== $benefit): 
+                <div class="col-span-1 relative p-4 card" data-aos="fade-up">
+                    <?php if (end($benefits) !== $benefit):
                     ?>
                         <div class="shadow-2xl w-[150px] h-[150px] absolute bg-main top-[-20px] right-[20px] rounded-full"></div>
                     <?php endif; ?>
@@ -47,7 +47,7 @@ $benefits = [
                                 <span></span><span></span><span></span>
                             </div>
                             <div class="p-5">
-                                <h3 class="font-bold text-[#FFCE26] text-[16px] md:text-[20px] font-hanuman mb-[14px] leading-10">
+                                <h3 class="font-bold text-[#FFCE26] text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-10">
                                     <?= $benefit['title']; ?>
                                 </h3>
                                 <p class="font-light text-[12px] text-white leading-[17px]">

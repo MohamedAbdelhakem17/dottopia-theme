@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
     margin: 0px !important;
@@ -7,7 +8,16 @@ html {
 
 body {
     overflow-x: hidden !important;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Text Family  */
+.hanuman-font {
     font-family: "Hanuman", serif !important;
+}
+
+.roboto-font {
+    font-family: "Roboto", sans-serif !important;
 }
 
 
@@ -107,6 +117,13 @@ nav {
     width: 80%;
 }
 
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
 /* Top-Level Menu Items */
 #menu-primary>.menu-item {
     position: relative;
@@ -171,30 +188,41 @@ nav {
     display: block;
 }
 
+
 /* Mobile Menu */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
     #menu-primary {
         flex-direction: column;
         gap: 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
+        display: none;
     }
 
-    #menu-primary>.menu-item {
-        width: 100%;
+    #menu-primary.active {
+        display: flex;
+        transform: translateY(0);
     }
 
     .sub-menu {
         position: static;
-        display: none;
-        width: 100%;
+        opacity: 1;
+        transform: translateY(0);
         box-shadow: none;
+        display: none;
     }
 
     .menu-item-has-children:hover>.sub-menu {
         display: block;
     }
-}
-
-.menu-item-has-children>a[href="#"] {
-    cursor: pointer;
-    pointer-events: none;
 }

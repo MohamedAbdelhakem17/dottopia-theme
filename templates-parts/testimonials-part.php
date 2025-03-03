@@ -11,9 +11,9 @@ function Testimonials($bg_color = '#ffdd6a', $quote_color = 'text-yellow-400', $
 
             <div class="container mx-auto my-4">
                 <!-- Header -->
-                <div class="text-center relative z-6" data-aos="fade-up" data-aos-duration="700">
-                    <h3 class="text-[16px] font-bold <?php echo esc_attr($title_class); ?> mb-[14px] md:mb-[16px]">Testimonials</h3>
-                    <p class="mb-2 md:mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] font-main">
+                <div class="text-center relative z-6">
+                    <h3 class="text-[16px] font-bold <?php echo esc_attr($title_class); ?> mb-[14px] md:mb-[16px]" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">Testimonials</h3>
+                    <p class="mb-2 md:mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] hanuman-font" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                         Read from our beloved clients
                     </p>
 

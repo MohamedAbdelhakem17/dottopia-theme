@@ -69,7 +69,7 @@ while (have_posts()) : the_post();
                             <?php if (!empty($hero_statistics) && is_array($hero_statistics)): ?>
                                 <?php foreach ($hero_statistics as $statistic): ?>
                                     <div class="flex items-center gap-x-4">
-                                        <span class="block font-bold font-main text-3xl md:text-5xl bg-black py-3 px-4 md:px-5 text-white relative overflow-hidden rounded-[5px] 
+                                        <span class="block font-bold hanuman-font text-3xl md:text-5xl bg-black py-3 px-4 md:px-5 text-white relative overflow-hidden rounded-[5px] 
                                             after:absolute after:top-[50%] after:left-[100%] after:w-[15px] after:h-[15px] after:bg-white after:z-[2] 
                                             after:transform after:-translate-x-[50%] after:-translate-y-[50%] after:rotate-[-45deg] after:rounded-tr-[2px]">
                                             <?= esc_html($statistic["hero_statistics_number"]); ?><span class="text-xl md:text-2xl">%</span>
@@ -218,7 +218,7 @@ while (have_posts()) : the_post();
                 <div class="text-center">
                     <h3 class="text-[16px] font-bold mb-[14px] md:mb-[16px] font-sub title">Case Studies</h3>
                     <p
-                        class="mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] font-main description">
+                        class="mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] hanuman-font description">
                         Real Results, Real Feedback. <br class="hidden md:block" /> Hear From our Clients.
                     </p>
                 </div>
