@@ -7,7 +7,7 @@
 <!-- Main Content -->
 
 <main class="bg-[#FFF9E5] pt-3">
-    <div class="text-center p-20">
+    <div class="text-center p-20" data-aos="fade-down" data-aos-delay="200">
         <h2 class="text-5xl font-bold mb-10">OUR WORK</h2>
         <div class="flex gap-16 justify-center py-4">
             <button class="px-4 py-2 text-center min-w-[180px] cursor-pointer inline-block rounded-lg bg-black text-white">All</button>
