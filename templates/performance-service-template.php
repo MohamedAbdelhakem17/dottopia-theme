@@ -174,7 +174,7 @@ get_header();
                                 <?= $title ?>
                             </h3>
 
-                            <p class="mb:mt-4 text-sm md:text-base text-gray-700 lg:w-[80%] font-sub">
+                            <p class="mb:mt-4 text-lg md:text-base text-gray-700 lg:w-[80%] font-sub">
                                 <?= $desc ?>
                             </p>
                         </div>

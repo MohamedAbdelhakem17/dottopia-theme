@@ -48,7 +48,10 @@
         <div class="container flex md:flex-row w-full lg:w-[90%] mx-auto flex-col items-center justify-around lg:p-8 gap-5">
             <!-- Image Container -->
             <div class="w-full">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/backgrounds/video_Cover.png'); ?>" alt="Video Cover" class="w-fit mx-auto" />
+                <img src="<?php echo esc_url(get_field("strategy_image") ?: get_template_directory_uri() . '/assets/images/backgrounds/video_Cover.png'); ?>"
+                    alt="Video Cover"
+                    class="w-fit mx-auto" />
+
             </div>
 
             <!-- Info Text -->
@@ -95,7 +98,9 @@
 
             <!-- Image Container -->
             <div class="w-full">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/backgrounds/video_Cover.png'); ?>" alt="Video Cover" class="w-fit mx-auto" />
+                <img src="<?php echo esc_url(get_field("traffic_image") ?: get_template_directory_uri() . '/assets/images/backgrounds/video_Cover.png'); ?>"
+                    alt="Video Cover"
+                    class="w-fit mx-auto" />
             </div>
         </div>
     </section>
@@ -123,8 +128,8 @@
                 <?php foreach ($steps as $step) :
                     $title = $step['title'];
                     $desc = $step['info'];
-                    // $image = $service['image'];
-                    $image = get_template_directory_uri() . '/assets/images/backgrounds/video_Cover.png'
+                    $image = $step['image'];
+                    $image_default = get_template_directory_uri() . '/assets/images/backgrounds/video_Cover.png'
                 ?>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-4 items-center parallax mt-3">
 
@@ -142,8 +147,8 @@
 
                         <!-- Image Container -->
                         <div class="px-4 md:px-8 col-span-1 md:col-span-1">
-                            <img src="<?= esc_url($image) ?>" alt="<?= esc_attr(strip_tags($title)) ?>"
-                                class=" object-contain mx-auto">
+                            <img src="<?= esc_url($image ?: $image_default) ?>"
+                                alt="<?= esc_attr(strip_tags($title)) ?>" class=" object-contain mx-auto">
                         </div>
 
                     </div>

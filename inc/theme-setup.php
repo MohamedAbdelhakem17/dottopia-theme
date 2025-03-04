@@ -1,5 +1,3 @@
-<!-- This File For Theme Setup  -->
-
 <?php
 // Add theme support for title tag
 function theme_setup()

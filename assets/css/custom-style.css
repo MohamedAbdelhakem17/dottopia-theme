@@ -226,3 +226,21 @@ nav {
         display: block;
     }
 }
+
+/* Footer  */
+
+.footer-widget li {
+    text-align: start;
+    margin: 10px 0px;
+}
+
+.footer-widget li a {
+    transition: transform 0.6s ease, color .8s ease;
+    display: block;
+    font-size: 16px;
+}
+
+.footer-widget li a:hover {
+    transform: translateX(10px);
+    color: #FFCE26;
+}

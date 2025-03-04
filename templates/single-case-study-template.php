@@ -10,10 +10,14 @@ while (have_posts()) : the_post();
     $hero_description = get_field("hero_discreption") ?? '';
     $hero_statistics = get_field("hero_statistics") ?? '';
     $category = wp_get_post_terms(get_the_ID(), 'category');
+    $service_link = get_field('service_link')["url"] ?? '';
+    $category_slug = $category[0]->slug ?? "main";
+    $service_name = $category[0]->name ?? '';
+
 
     // About Data
     $about_title = get_field("about_title") ?? '';
-    $about_description = get_field("about_discription") ?? '';
+    $about_description = get_field("about_info") ?? '';
     $what_we_did = get_field("what_we_did") ?? '';
     $about_statistics  = get_field("about_statistics") ?? '';
     $challenges = get_field("challenges") ?? "";
@@ -40,13 +44,13 @@ while (have_posts()) : the_post();
                 <!-- First Row -->
                 <div class="lg:w-[50%] ">
                     <a href="<?php echo esc_url(home_url('/case-studies')); ?>" class="flex items-center gap-x-4 my-4">
-                        <span class="w-[24px] h-[24px] rounded-full bg-main flex items-center justify-center"><i class="fa-solid fa-arrow-left text-[14px]"></i></span>
+                        <span class="w-[24px] h-[24px] rounded-full bg-<?= esc_attr(detect_color($category_slug)); ?> flex items-center justify-center"><i class="fa-solid fa-arrow-left text-[14px]"></i></span>
                         <span class="text-[16px] font-bold uppercase">Our Work</span>
                     </a>
                     <h1 class="text-[47px] font-bold"><?php echo esc_html($case_title); ?></h1>
 
                     <p class="my-5">
-                        <span class="bg-main text-white py-1 px-5 rounded-full text-normal"><?= esc_html($category[0]->name); ?></span>
+                        <span class="bg-<?= esc_attr(detect_color($category_slug)); ?> text-white py-1 px-5 rounded-full text-normal"><?= esc_html($service_name); ?></span>
                         <span class="text-[18px] font-normal p-2"><?php echo esc_html(the_date()); ?></span>
                     </p>
 
@@ -94,7 +98,7 @@ while (have_posts()) : the_post();
         <!-- End </hero> -->
 
         <!-- Start <about> -->
-        <section class="bg-seo/20 py-10">
+        <section class="bg-<?= esc_attr(detect_color($category_slug)); ?>/20 py-10">
             <div class="container mx-auto">
                 <!-- First Row -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -114,8 +118,8 @@ while (have_posts()) : the_post();
                             <?php endif; ?>
                         </ul>
 
-                        <a href="<?php echo esc_url(home_url('/case-studies')); ?>" class="flex items-center gap-x-4 my-4 justify-center">
-                            <span class="text-[17px] font-normal uppercase">Go To SEO Service</span>
+                        <a href="<?= esc_url($service_link); ?>" class="flex items-center gap-x-4 my-4 justify-center">
+                            <span class="text-[17px] font-normal uppercase">Go To <?= $service_name; ?> Service</span>
                             <span class="w-[24px] h-[24px] rounded-full bg-seo flex items-center justify-center"><i class="fa-solid fa-arrow-right text-[14px]"></i></span>
                         </a>
                     </div>
@@ -156,14 +160,15 @@ while (have_posts()) : the_post();
             <?php if (is_array(value: $challenges)) : ?>
                 <div class="container mx-auto grid grid-cols-1 gap-y-6 md:gap-y-4 mt-20">
                     <h3 class="text-4xl font-bold py-4 mb-5">Challenges</h3>
-                    <?php foreach ($challenges as $index => $value) : ?>
-                        <div
-                            class="flex flex-col md:flex-row <?= $index % 2 === 0 ? 'md:flex-row-reverse' : '' ?> items-center gap-4">
+                    <?php foreach ($challenges as $index => $value) :
+                        $image = $value["challenges_image"];
+                        $image_url = $image['url'] ?? $fallback_image;
+                        $image_alt = !empty($image['alt']) ? esc_attr($image['alt']) : 'Challenge Image';
+                    ?>
+                        <div class="flex flex-col md:flex-row <?= $index % 2 === 0 ? 'md:flex-row-reverse' : '' ?> items-center gap-4">
                             <!-- Image Section -->
                             <div class="w-full md:w-1/2 px-4">
-                                <img src="<?= esc_url($value['challenges_image'] ?: $fallback_image) ?>" alt="image"
-                                    class="w-fit aspect-[1/.5] mx-auto">
-
+                                <img src="<?= esc_url($image_url) ?>" alt="<?= $image_alt ?>" class="w-fit aspect-[1/.5] mx-auto">
                             </div>
                             <!-- Text Section -->
                             <div class="w-full md:w-1/2 px-4 text-start [&_li]:my-2 [&_li]:text-[17px] [&_ul]:list-disc [&_ul]:list-inside">
@@ -171,6 +176,7 @@ while (have_posts()) : the_post();
                             </div>
                         </div>
                     <?php endforeach; ?>
+
                 </div>
             <?php endif; ?>
         </section>
@@ -197,7 +203,7 @@ while (have_posts()) : the_post();
                     </div>
 
                     <div class="col-span-1 bg-white p-5 rounded-lg">
-                        <img src="<?= esc_url($result_image ?: $fallback_image) ?>" alt="image"
+                        <img src="<?= esc_url($result_image['url'] ??  $fallback_image) ?>" alt="<?php echo !empty($image['alt']) ? esc_attr($image['alt']) : 'Challenge Image'; ?>"
                             class="w-fit mx-auto">
                     </div>
                 </div>
@@ -207,7 +213,7 @@ while (have_posts()) : the_post();
 
         <!-- Start <testimonials> -->
         <?php require_once get_template_directory() . "/templates-parts/testimonials-part.php";
-        Testimonials()
+        Testimonials("#ffdd6a","text-".detect_color($category_slug),"#FFF9E6","text-".detect_color($category_slug))
         ?>
         <!-- End </testimonials> -->
 

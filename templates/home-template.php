@@ -58,10 +58,10 @@
         $clients = get_field('clients', 'option');
 
         if ($clients): ?>
-            <div class="client-carousel-wrapper overflow-hidden p-2">
+            <div class=" overflow-hidden p-2">
 
                 <!-- First Row (Moves Left) -->
-                <div class="client-carousel-row client-carousel-row-1 grid grid-flow-col auto-cols-max gap-4 my-3">
+                <div class=" grid grid-cols-8 gap-4 my-3">
                     <?php foreach ($clients as $client): ?>
                         <?php $image_url = esc_url($client); ?>
                         <div class="client-logo flex items-center justify-center px-4">
@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- Second Row (Moves Right) -->
-                <div class="client-carousel-row client-carousel-row-2 grid grid-flow-col auto-cols-max gap-4  my-3">
+                <div class=" grid grid-flow-col gap-4  my-3">
                     <?php foreach ($clients as $clients_reversed): ?>
                         <?php $image_url = esc_url($clients_reversed); ?>
                         <div class="client-logo flex items-center justify-center px-4">
@@ -143,7 +143,7 @@
 
                 <!--  Box  one-->
                 <div class="col-span-1 relative p-4 card"  data-aos="fade-left">
-                    <div class="shadow-2xl w-[250px] h-[250px] absolute bg-[#8122d1e0] top-[-20px] right-[50px] rounded-full"></div>
+                    <div class="shadow-2xl w-[250px] h-[250px] absolute bg-[#8122d1e0] top-[-20px] right-[50px] rounded-full"  data-aos="fade-in" data-aos-delay="700"></div>
                     <div class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-seo">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG" class="left-0 top-0 h-full w-fit absolute z-10" />
                         <div class="w-full h-full relative z-30">
@@ -164,7 +164,7 @@
 
                 <!--  Box Two -->
                 <div class="col-span-1 relative p-4 card" data-aos="zoom-in">
-                    <div class="shadow-2xl w-[250px] h-[250px] absolute bg-[#39c6a1] top-[-20px] right-[50px] rounded-full"></div>
+                    <div class="shadow-2xl w-[250px] h-[250px] absolute bg-[#39c6a1] top-[-20px] right-[50px] rounded-full"  data-aos="fade-in" data-aos-delay="700"></div>
                     <div class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-performance ">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG" class="left-0 top-0 h-full w-fit absolute z-10" />
                         <div class="w-full h-full relative z-30">

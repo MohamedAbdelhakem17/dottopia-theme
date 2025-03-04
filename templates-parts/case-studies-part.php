@@ -23,7 +23,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                 $title       = get_field("hero_title", $post_id) ?: 'Default Title';
                 $description = get_field("hero_discreption", $post_id) ?: 'No description available.';
                 $statistics  = get_field("hero_statistics", $post_id) ?: [];
-                $image       = get_the_post_thumbnail_url($post_id, 'thumbnail') ?: $fallback_image;
+                $image       = get_the_post_thumbnail_url($post_id, 'full') ?: $fallback_image;
 
                 // Ensure category exists
                 $categories = get_the_category($post_id);
@@ -48,7 +48,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                     <div class="p-4 rounded-lg border-transparent border-[2px] border-t-<?= esc_attr(detect_color($category_slug)); ?> grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 px-10">
                         <!-- Image -->
                         <div class="lg:col-span-2 md:col-span-5 self-center">
-                            <img src="<?= esc_url($image); ?>" alt="<?= esc_attr($main_title); ?> Image" class="w-fit md:aspect-[1/.6] rounded-md" />
+                            <img src="<?= esc_url($image); ?>" alt="<?= esc_attr($main_title); ?> Image" class="w-full md:aspect-[1/.6] rounded-md" />
 
                             <!-- category button -->
                             <h4 class="bg-<?= esc_attr(detect_color($category_slug)); ?> text-white px-4 py-2 rounded-[50px] font-normal text-[12px] mt-4 md:mt-6 w-fit">

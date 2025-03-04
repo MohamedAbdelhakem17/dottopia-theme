@@ -31,9 +31,20 @@
 
 
             <div class="col-span-1 md:col-span-1 p-2">
-                <?php dynamic_sidebar('footer-left'); ?>
+                <?php dynamic_sidebar('footer_services'); ?>
             </div>
 
+            <div class="col-span-1 md:col-span-1 p-2">
+                <?php dynamic_sidebar('footer_resources'); ?>
+            </div>
+
+            <div class="col-span-1 md:col-span-1 p-2">
+                <?php dynamic_sidebar('footer_case_studies'); ?>
+            </div>
+            
+            <div class="col-span-1 md:col-span-1 p-2">
+                <?php dynamic_sidebar('footer_social_links'); ?>
+            </div>
 
         </div>
 

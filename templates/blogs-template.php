@@ -90,7 +90,7 @@
                         $blog_query->the_post();
                         $post_id      = get_the_ID();
                         $title        = get_the_title();
-                        $image        = get_the_post_thumbnail_url($post_id, 'medium') ?: $fallback_image;
+                        $image        = get_the_post_thumbnail_url($post_id, 'full') ?: $fallback_image;
                         $categories   = get_the_category();
                         $category     = !empty($categories) ? esc_html($categories[0]->name) : 'Main';
                         $word_count   = str_word_count(strip_tags(get_the_content()));

@@ -28,14 +28,14 @@ function Clients($color = "text-main", $number_color = "text-black", $background
         </div>
 
         <section>
-            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 px-3">
                 <!-- Get Clients -->
                 <?php
                 $clients = get_field('clients', 'option');
                 if (!empty($clients) && is_array($clients)) :
                     foreach ($clients as $client) :
                 ?>
-                        <div class="col-span-1 md:col-span-2 lg:col-span-1 p-4 flex items-center justify-center">
+                        <div class="col-span-1 md:col-span-2 lg:col-span-1 p-5 flex items-center justify-center ">
                             <img src="<?php echo esc_url($client); ?>" alt="Client Logo" class="object-contain" />
                         </div>
                 <?php
