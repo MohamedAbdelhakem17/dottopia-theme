@@ -7,7 +7,6 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
         "post_type"      => "case_studies",
         "posts_per_page" => $cases_number,
         "fields"         => "ids", // Optimize query by fetching only post IDs
-
     );
 
     $case_studies_query = new WP_Query($args);
@@ -31,7 +30,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                 $category_slug = !empty($categories) ? $categories[0]->slug : 'main';
             ?>
 
-                <div class="bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10 fade" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="post-item bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10 fade" data-aos="zoom-in" data-aos-duration="1000"  data-category="<?php echo esc_attr($category_slug); ?>">
                     <!-- heading -->
                     <div class="flex flex-wrap justify-between items-center py-4 px-10">
                         <h3 class="font-bold hanuman-font text-2xl md:text-3xl " data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay="100"><?= esc_html($main_title); ?></h3>

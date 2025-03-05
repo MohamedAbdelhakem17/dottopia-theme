@@ -1,9 +1,11 @@
 <footer class="site-footer bg-[#1A1A1A] text-white py-5 px-2 space-y-10 text-center">
     <div class="container  mx-auto">
-        <div class="flex flex-col items-center justify-center space-y-4 py-2 md:flex-row md:space-y-0 md:space-x-8">
+
+        <!-- top -->
+        <div class="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-y-0 md:space-x-8 my-10 py-3" data-aos="fade-in" data-aos-duration="1500">
             <div class="flex flex-col items-center md:flex-row md:space-x-4">
-                <img src="<?= esc_url(get_template_directory_uri() . "/assets/image/footer/whatsapp_icon.svg") ?>" alt="Whatsapp Logo" class="w-10 h-10 md:order-none" />
-                <p class="text-center font-bold leading-[33px] text-xl md:text-4xl">
+                <img src="<?= esc_url(get_template_directory_uri() . "/assets/images/whatsapp_icon.svg") ?>" alt="Whatsapp Logo" class="w-10 h-10 md:order-none" />
+                <p class="text-center font-bold leading-[35px] text-xl md:text-4xl">
                     Ready to speak with a marketing expert?
                     <span class="text-main"> Give us a ring.</span>
                 </p>
@@ -13,42 +15,44 @@
             </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 px-2 md:px-10">
+        <!-- Middle -->
+        <div class="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-4 px-2 md:px-10 border-y-1 border-gray-500/30 py-10">
 
-            <div class="col-span-1 md:col-span-3 lg:col-span-2 p-2">
-                <img src={footer_logo} alt="Dottopia Logo" class="mx-auto md:mx-0 block" />
+            <div class="col-span-4 md:col-span-3 lg:col-span-2 p-2">
+                <img data-aos="fade-up" src="<?= esc_url(get_template_directory_uri() . "/assets/images/logo_footer.png") ?>" alt="Dottopia Logo" class="mx-auto md:mx-0 block" />
 
-                <p class="text-[15px] font-light font-roboto my-10 md:text-start capitalize text-gray-100 text-center  ">
+                <p class="text-[15px] font-light font-roboto my-10 md:text-start capitalize text-gray-100 text-center" data-aos="fade-right" >
                     We were asked to make a session that would truly display our target audience and our
                 </p>
 
-                <div class="flex space-x-5 my-6 justify-between">
-                    <img src={meta_footer} alt="Meta Logo" class="w-fit md:mx-0 block" />
-                    <img src={google_footer} alt="Meta Logo" class="w-fit md:mx-0 block" />
-                    <img src={tia} alt="Meta Logo" class="w-fit md:mx-0 block" />
+                <div class="flex space-x-5 my-10 justify-between">
+                    <img data-aos="flip-up" src="<?= esc_url(get_template_directory_uri() . "/assets/images/meta_footer.png") ?>" alt="Meta Logo" class="w-fit md:mx-0 block" />
+                    <img data-aos="flip-up" src="<?= esc_url(get_template_directory_uri() . "/assets/images/google_footer.png") ?>" alt="Meta Logo" class="w-fit md:mx-0 block" />
+                    <img data-aos="flip-up" src="<?= esc_url(get_template_directory_uri() . "/assets/images/tia.png") ?>" alt="Meta Logo" class="w-fit md:mx-0 block" />
                 </div>
             </div>
 
 
-            <div class="col-span-1 md:col-span-1 p-2">
+            <div class="col-span-2 md:col-span-1 p-2" data-aos="fade-left">
                 <?php dynamic_sidebar('footer_services'); ?>
             </div>
 
-            <div class="col-span-1 md:col-span-1 p-2">
+            <div class="col-span-2 md:col-span-1 p-2" data-aos="fade-right">
                 <?php dynamic_sidebar('footer_resources'); ?>
             </div>
 
-            <div class="col-span-1 md:col-span-1 p-2">
+            <div class="col-span-2 md:col-span-1 p-2" data-aos="fade-left">
                 <?php dynamic_sidebar('footer_case_studies'); ?>
             </div>
-            
-            <div class="col-span-1 md:col-span-1 p-2">
+
+            <div class="col-span-2 md:col-span-1 p-2" data-aos="fade-right">
                 <?php dynamic_sidebar('footer_social_links'); ?>
             </div>
 
         </div>
 
-        <p>&copy; <?php echo date('Y'); ?> My Custom Theme. All rights reserved.</p>
+        <!-- Bottom -->
+        <p class="py-5 text-center text-[14px] font-normal" > Dottopia® 2014-2025 | Celebrating 10+ Years of Digital Marketing Excellence </p>
     </div>
 </footer>
 

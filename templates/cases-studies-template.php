@@ -10,12 +10,12 @@
     <div class="text-center p-20" data-aos="fade-down" data-aos-delay="200">
         <h2 class="text-5xl font-bold mb-10">OUR WORK</h2>
         <div class="flex gap-16 justify-center py-4">
-            <button class="px-4 py-2 text-center min-w-[180px] cursor-pointer inline-block rounded-lg bg-black text-white">All</button>
+            <button class="category-btn px-4 py-2 text-center min-w-[180px] cursor-pointer inline-block rounded-lg bg-black text-white border" data-category="all">All</button>
             <?php
             $categories = get_categories();
             if (! empty($categories)) {
                 foreach ($categories as $category) {
-                    echo '<button class="px-4 py-2 text-center min-w-[180px] cursor-pointer inline-block rounded-lg border border-black">' . $category->name . '</button>';
+                    echo '<button class="category-btn px-4 py-2 min-w-[180px] rounded-lg border border-black" data-category="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</button>';
                 }
             }
             ?>

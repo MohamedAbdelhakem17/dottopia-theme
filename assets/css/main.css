@@ -624,6 +624,9 @@
   .col-span-2 {
     grid-column: span 2 / span 2;
   }
+  .col-span-4 {
+    grid-column: span 4 / span 4;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -674,6 +677,9 @@
   }
   .my-10 {
     margin-block: calc(var(--spacing) * 10);
+  }
+  .my-20 {
+    margin-block: calc(var(--spacing) * 20);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -735,6 +741,9 @@
   .mb-\[14px\] {
     margin-bottom: 14px;
   }
+  .ml-auto {
+    margin-left: auto;
+  }
   .block {
     display: block;
   }
@@ -764,6 +773,9 @@
   }
   .aspect-\[1\/\.5\] {
     aspect-ratio: 1/.5;
+  }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
@@ -806,6 +818,12 @@
   }
   .min-h-\[70vh\] {
     min-height: 70vh;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-8 {
+    width: calc(var(--spacing) * 8);
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
@@ -927,9 +945,6 @@
   .list-disc {
     list-style-type: disc;
   }
-  .auto-cols-max {
-    grid-auto-columns: max-content;
-  }
   .grid-flow-col {
     grid-auto-flow: column;
   }
@@ -938,6 +953,9 @@
   }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .grid-cols-8 {
     grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -1100,6 +1118,14 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-y-1 {
+    border-block-style: var(--tw-border-style);
+    border-block-width: 1px;
+  }
+  .border-y-2 {
+    border-block-style: var(--tw-border-style);
+    border-block-width: 2px;
+  }
   .border-t-2 {
     border-top-style: var(--tw-border-style);
     border-top-width: 2px;
@@ -1117,8 +1143,32 @@
   .border-digital\/50 {
     border-color: color-mix(in oklab, var(--color-digital) 50%, transparent);
   }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
   .border-gray-400 {
     border-color: var(--color-gray-400);
+  }
+  .border-gray-400\/30 {
+    border-color: color-mix(in oklab, var(--color-gray-400) 30%, transparent);
+  }
+  .border-gray-500 {
+    border-color: var(--color-gray-500);
+  }
+  .border-gray-500\/20 {
+    border-color: color-mix(in oklab, var(--color-gray-500) 20%, transparent);
+  }
+  .border-gray-500\/30 {
+    border-color: color-mix(in oklab, var(--color-gray-500) 30%, transparent);
+  }
+  .border-gray-600 {
+    border-color: var(--color-gray-600);
+  }
+  .border-gray-800 {
+    border-color: var(--color-gray-800);
+  }
+  .border-gray-900 {
+    border-color: var(--color-gray-900);
   }
   .border-main {
     border-color: var(--color-main);
@@ -1180,14 +1230,20 @@
   .bg-seo {
     background-color: var(--color-seo);
   }
-  .bg-seo\/20 {
-    background-color: color-mix(in oklab, var(--color-seo) 20%, transparent);
+  .bg-sky-200 {
+    background-color: var(--color-sky-200);
+  }
+  .bg-sky-700 {
+    background-color: var(--color-sky-700);
   }
   .bg-white {
     background-color: var(--color-white);
   }
   .bg-white\/5 {
     background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+  }
+  .bg-yellow-100 {
+    background-color: var(--color-yellow-100);
   }
   .object-contain {
     object-fit: contain;
@@ -1269,6 +1325,9 @@
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
+  }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
   }
   .py-\[10px\] {
     padding-block: 10px;
@@ -1518,6 +1577,9 @@
   }
   .text-gray-500 {
     color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
   }
   .text-gray-700 {
     color: var(--color-gray-700);
@@ -1868,11 +1930,6 @@
       width: 95%;
     }
   }
-  .sm\:grid-cols-2 {
-    @media (width >= 40rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
   .md\:order-1 {
     @media (width >= 48rem) {
       order: 1;
@@ -1966,11 +2023,6 @@
   .md\:aspect-\[1\/\.6\] {
     @media (width >= 48rem) {
       aspect-ratio: 1/.6;
-    }
-  }
-  .md\:aspect-\[1\/1\] {
-    @media (width >= 48rem) {
-      aspect-ratio: 1/1;
     }
   }
   .md\:w-1\/2 {
@@ -2369,11 +2421,6 @@
   .lg\:text-\[40px\] {
     @media (width >= 64rem) {
       font-size: 40px;
-    }
-  }
-  .\[_\&li\]\:text-start {
-     &li {
-      text-align: start;
     }
   }
   .\[\&_h2\]\:w-\[90\%\] {

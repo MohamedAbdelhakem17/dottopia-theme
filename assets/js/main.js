@@ -81,7 +81,7 @@
 // Start Scroll
 (function () {
 
-    const { animate, scroll, inView } = Motion;
+    const { animate, scroll } = Motion;
 
     // Start Parallax Animation 
     document.querySelectorAll(".parallax").forEach((section) => {
@@ -250,7 +250,7 @@
 // AOS Animation
 AOS.init(
     {
-        offset: 150,
+        offset: 50,
         duration: 800,
         easing: 'ease-in-out',
         once: false,
@@ -258,7 +258,6 @@ AOS.init(
 );
 
 // Navbar
-
 document.addEventListener("DOMContentLoaded", function () {
     const menu = document.getElementById("menu-primary");
     const menuToggleBtn = document.getElementById("menu-toggle");
@@ -267,4 +266,70 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.classList.toggle("active");
         // alert('hello')
     });
+});
+
+// BLog Filter
+document.addEventListener("DOMContentLoaded", function () {
+    const categoryButtons = document.querySelectorAll(".category-btn");
+    const posts = document.querySelectorAll(".post-item");
+
+    // Function to filter posts based on category
+    function filterPosts(category) {
+        categoryButtons.forEach(btn => btn.classList.remove("bg-black", "text-white"));
+
+        categoryButtons.forEach(button => {
+            if (button.getAttribute("data-category").toLowerCase() === category.toLowerCase()) {
+                button.classList.add("bg-black", "text-white");
+            }
+        });
+
+        posts.forEach(post => {
+            if (category === "all" || post.getAttribute("data-category") === category) {
+                post.style.display = "block";
+            } else {
+                post.style.display = "none";
+            }
+        });
+    }
+
+    // Function to update the URL without reloading
+    function updateCategory(category) {
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set("category", category);
+        window.history.pushState({}, "", newUrl);
+        filterPosts(category);
+    }
+
+    // Set category on page load if exists in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentCategory = urlParams.get("category") || "all";
+    filterPosts(currentCategory);
+
+    // Event listeners for category buttons
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const category = this.getAttribute("data-category");
+            updateCategory(category);
+        });
+    });
+
+    // Handle back/forward navigation (browser history)
+    window.addEventListener("popstate", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get("category") || "all";
+        filterPosts(category);
+    });
+});
+
+var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        type: "fraction",
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });

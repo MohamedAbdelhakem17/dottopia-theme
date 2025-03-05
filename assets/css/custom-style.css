@@ -229,6 +229,14 @@ nav {
 
 /* Footer  */
 
+.footer-widget h6 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
 .footer-widget li {
     text-align: start;
     margin: 10px 0px;
@@ -243,4 +251,14 @@ nav {
 .footer-widget li a:hover {
     transform: translateX(10px);
     color: #FFCE26;
+}
+
+.footer-widget li a i {
+    padding: 0 10px;
+    margin: 0 10px;
+    font-size: 18px;
+}
+.footer-widget li a span {
+    font-weight: 700;
+    font-size: 18px;
 }
