@@ -11,86 +11,47 @@
         <div class="container mx-auto py-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div class="col-span-1 py-10 px-4">
-                    <div class="swiper mySwiper w-full max-w-2xl">
-                        <div class="swiper-wrapper">
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide bg-yellow-100 p-6 rounded-xl shadow-md">
-                                <blockquote class="text-gray-800">
-                                    <p class="text-lg font-semibold">"Haven’t actually dealt with so many advertising agencies in Qatar, we found it really exciting working with Dottopia on such a big project of ours."</p>
-                                    <div class="flex items-center gap-4 mt-4">
-                                        <img src="profile.jpg" alt="Ashley Narayan" class="w-10 h-10 rounded-full">
-                                        <div>
-                                            <p class="font-bold">Ashley Narayan</p>
-                                            <p class="text-sm text-gray-600">Uber, Qatar</p>
+                    <div class="contact-swiper-container">
+                        <div class="swiper-wrapper contact-swiper-wrapper"> <!-- Added both classes -->
+                            <?php
+                            $testimonials = get_field('testimonial', "option");
+                            foreach ($testimonials as $testimonial): ?>
+                                <div class="swiper-slide py-12 px-2">
+                                    <div class="rounded-xl p-8 relative shadow-md flex flex-col justify-between h-full bg-red-900/60">
+                                        <div class="text-9xl text-main opacity-50 mb-0 leading-[18px] mt-4 py-3">
+                                            &quot;
                                         </div>
-                                        <img src="uber-logo.png" alt="Uber Logo" class="w-8 h-8 ml-auto">
-                                    </div>
-                                </blockquote>
-                            </div>
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide bg-yellow-100 p-6 rounded-xl shadow-md">
-                                <blockquote class="text-gray-800">
-                                    <p class="text-lg font-semibold">"Haven’t actually dealt with so many advertising agencies in Qatar, we found it really exciting working with Dottopia on such a big project of ours."</p>
-                                    <div class="flex items-center gap-4 mt-4">
-                                        <img src="profile.jpg" alt="Ashley Narayan" class="w-10 h-10 rounded-full">
-                                        <div>
-                                            <p class="font-bold">Ashley Narayan</p>
-                                            <p class="text-sm text-gray-600">Uber, Qatar</p>
+
+                                        <div class="max-w-2xl mx-auto flex-grow">
+                                            <p class="text-gray-800 text-lg mb-8 py-5 font-bold">
+                                                <?php echo esc_html($testimonial['comment']); ?>
+                                            </p>
                                         </div>
-                                        <img src="uber-logo.png" alt="Uber Logo" class="w-8 h-8 ml-auto">
-                                    </div>
-                                </blockquote>
-                            </div>
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide bg-yellow-100 p-6 rounded-xl shadow-md">
-                                <blockquote class="text-gray-800">
-                                    <p class="text-lg font-semibold">"Haven’t actually dealt with so many advertising agencies in Qatar, we found it really exciting working with Dottopia on such a big project of ours."</p>
-                                    <div class="flex items-center gap-4 mt-4">
-                                        <img src="profile.jpg" alt="Ashley Narayan" class="w-10 h-10 rounded-full">
-                                        <div>
-                                            <p class="font-bold">Ashley Narayan</p>
-                                            <p class="text-sm text-gray-600">Uber, Qatar</p>
+
+                                        <div class="flex items-center justify-between gap-4">
+                                            <div class="flex items-center gap-x-3">
+                                                <img src="<?php echo esc_url($testimonial['user_image']); ?>"
+                                                    alt="<?php echo esc_attr($testimonial['name']); ?>"
+                                                    width="48" height="48"
+                                                    class="object-cover bg-white rounded-full">
+                                                <div class="flex items-center gap-x-1">
+                                                    <span class="font-bold"><?php echo esc_html($testimonial['name']); ?></span> -
+                                                    <span class="text-[12px]"><?php echo esc_html($testimonial['company']); ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="w-16 h-16 flex items-center justify-center">
+                                                <img src="<?php echo esc_url($testimonial['logo_image']); ?>"
+                                                    alt="<?php echo esc_attr($testimonial['company'] . ' logo'); ?>"
+                                                    width="50" height="50" class="object-contain">
+                                            </div>
                                         </div>
-                                        <img src="uber-logo.png" alt="Uber Logo" class="w-8 h-8 ml-auto">
                                     </div>
-                                </blockquote>
-                            </div>
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide bg-yellow-100 p-6 rounded-xl shadow-md">
-                                <blockquote class="text-gray-800">
-                                    <p class="text-lg font-semibold">"Haven’t actually dealt with so many advertising agencies in Qatar, we found it really exciting working with Dottopia on such a big project of ours."</p>
-                                    <div class="flex items-center gap-4 mt-4">
-                                        <img src="profile.jpg" alt="Ashley Narayan" class="w-10 h-10 rounded-full">
-                                        <div>
-                                            <p class="font-bold">Ashley Narayan</p>
-                                            <p class="text-sm text-gray-600">Uber, Qatar</p>
-                                        </div>
-                                        <img src="uber-logo.png" alt="Uber Logo" class="w-8 h-8 ml-auto">
-                                    </div>
-                                </blockquote>
-                            </div>
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide bg-yellow-100 p-6 rounded-xl shadow-md">
-                                <blockquote class="text-gray-800">
-                                    <p class="text-lg font-semibold">"Haven’t actually dealt with so many advertising agencies in Qatar, we found it really exciting working with Dottopia on such a big project of ours."</p>
-                                    <div class="flex items-center gap-4 mt-4">
-                                        <img src="profile.jpg" alt="Ashley Narayan" class="w-10 h-10 rounded-full">
-                                        <div>
-                                            <p class="font-bold">Ashley Narayan</p>
-                                            <p class="text-sm text-gray-600">Uber, Qatar</p>
-                                        </div>
-                                        <img src="uber-logo.png" alt="Uber Logo" class="w-8 h-8 ml-auto">
-                                    </div>
-                                </blockquote>
-                            </div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-
-                        <!-- Pagination & Navigation -->
-                        <div class="swiper-pagination mt-4"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <!-- Pagination -->
+                        <div class="swiper-pagination"></div>
                     </div>
-
                 </div>
 
                 <div class="col-span-1 px-4">

@@ -321,15 +321,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        type: "fraction",
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".contact-swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        centeredSlides: true,
+        slidesPerView: 1,
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 5,
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            }
+        },
+    });
 });
