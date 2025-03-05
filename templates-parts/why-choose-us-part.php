@@ -35,7 +35,7 @@
             <!-- Local Marketing Agency Section -->
             <div class="col-span-1">
                 <div class="bg-white p-4 rounded-lg shadow-md h-[100%] lg:w-[80%] mx-auto">
-                    <h2 class="text-[24px] font-bold font-main p-4">Local Marketing Agency</h2>
+                    <h2 class="text-[24px] font-bold hanuman-font p-4">Local Marketing Agency</h2>
                     <ul class="mt-4 space-y-3 text-gray-700 px-3 py--2">
                         <?php
                         $local_marketing_agency = get_field("local_marketing_agency", "option");
@@ -50,7 +50,7 @@
             <!-- In-House Marketing Section -->
             <div class="col-span-1">
                 <div class="bg-white p-6 rounded-lg shadow-md h-[100%] lg:w-[80%] mx-auto">
-                    <h2 class=" text-[24px] font-bold font-main p-4 ">In-House Marketing</h2>
+                    <h2 class=" text-[24px] font-bold hanuman-font p-4 ">In-House Marketing</h2>
                     <ul class="mt-4 space-y-3 text-gray-700 px-3 py--2">
                         <?php
                         $in_house_marketing = get_field("in-house_marketing", "option");

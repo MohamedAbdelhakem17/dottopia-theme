@@ -13,15 +13,15 @@
 <body>
     <nav class="w-full z-50 shadow-md py-3 px-5">
         <div class="container mx-auto flex justify-between items-center px-5 md:px-10">
-            <!-- Brand -->
             <div class="brand">
                 <a href="/">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="dottopia logo"
-                        class="w-[135px]">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo" class="w-[135px]">
                 </a>
             </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
 
-            <!-- Navigation Links -->
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary',
@@ -32,4 +32,5 @@
             ?>
         </div>
 
+        </div>
     </nav>

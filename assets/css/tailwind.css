@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap');
 
 
 @theme {
@@ -9,16 +8,13 @@
     --color-seo: #745BA3;
     --color-performance: #009264;
 
-    /* Extend Font Family */
-    --font-main: "Hanuman";
-    --font-sub: "Roboto";
-
     /* Extend shadow */
     --shadow-custom: 0 10px 80px 20px #cca51e;
     --shadow-seo: 0 10px 80px 20px #745BA3;
 
     /* Extend Animation */
     --animate-spinSlow: spin 60s linear infinite;
+    
     /* Variables */
     --gradient: linear-gradient(85.91deg, #FFD546 33.16%, #FFE89B 99.65%);
     --gradient-service: linear-gradient(359.41deg, rgba(0, 0, 0, 0.52) 27.22%, #000000 149.2%);

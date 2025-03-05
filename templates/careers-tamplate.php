@@ -11,7 +11,7 @@
     <header class="w-full h-screen bg-black relative overflow-hidden">
         <!-- Content -->
         <div class="container w-full h-full flex items-center justify-center flex-col p-5 relative z-10 mx-auto">
-            <h3 class="capitalize text-white text-center text-[20px] leading-[1.6] md:text-5xl font-main md:leading-[54px] mx-auto"
+            <h3 class="capitalize text-white text-center text-[20px] leading-[1.6] md:text-5xl hanuman-font md:leading-[54px] mx-auto"
                 data-inview="text-fadeInUp">
                 We’re not just building <span class="font-bold text-main">careers</span> <br>
                 we’re shaping the future of 
@@ -40,7 +40,7 @@
             <div class="w-full px-3">
                 <h3 class="text-[16px] font-bold text-main mb-[14px] title">About Dottopia</h3>
 
-                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 font-main title">
+                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 hanuman-font title">
                     Who We Are
                 </p>
 
@@ -56,7 +56,7 @@
     <!-- Start <gallery > -->
     <section class="py-10">
         <div class="container mx-auto">
-            <h2 class="text-[40px] text-center font-main font-bold">Meet The People Behind Dottopia</h2>
+            <h2 class="text-[40px] text-center hanuman-font font-bold">Meet The People Behind Dottopia</h2>
             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/dottopia_2.png'); ?>" alt="Meet The People Behind Dottopia" class="w-full mx-auto">
         </div>
     </section>
@@ -70,7 +70,7 @@
     <section class="bg-main w-full p-6">
         <div class="container mx-auto">
             <!-- HEADER -->
-            <h2 class="text-center font-bold font-main text-[16px]">
+            <h2 class="text-center font-bold hanuman-font text-[16px]">
                 Explore Digital Marketing Jobs
             </h2>
             <p class="text-center text-black font-bold text-[40px]">
@@ -93,7 +93,7 @@
                     <div class="bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10 fade">
                         <!-- Job Heading -->
                         <div class="flex flex-wrap justify-between items-center py-4 px-10">
-                            <h3 class="font-bold font-main text-2xl md:text-3xl">
+                            <h3 class="font-bold hanuman-font text-2xl md:text-3xl">
                                 <?php the_title(); ?>
                             </h3>
 

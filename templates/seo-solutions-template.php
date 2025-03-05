@@ -13,15 +13,15 @@
                 <div class="col-span-1 flex justify-center flex-col">
                     <h1 class="text-seo text-sm font-[400] ">Search Engine Optimization</h1>
                     <p class="text-[48px] font-normal leading-[60px] mt-2 mb-4 py-2 md:w-[90%] uppercase">We increase your <br class="hidden md:block"> <span class="text-seo font-bold">website traffic</span>, so you won’t have to worry about
-                    <span class="text-seo font-bold">ranking.</span>
-                    <span  class='inline-block p-0 m-0 text-seo font-bold'> ranking. <img src='<?= get_template_directory_uri() . '/assets/images/backgrounds/seo_line.svg' ?>' class='-translate-y-2'></span>
+                        <span class="text-seo font-bold">ranking.</span>
+                        <span class='inline-block p-0 m-0 text-seo font-bold'> ranking. <img src='<?= get_template_directory_uri() . '/assets/images/backgrounds/seo_line.svg' ?>' class='-translate-y-2'></span>
                     </p>
                     <p class="md:w-[80%]">Unlock your business potential with Dottopia’s expert solutions to increase leads on your website.  <br class="hidden md:block">
                         Ready to turn visitors into loyal customers? </p>
                     <a href="#" target="_blank"
-                    class="w-fit block bg-black text-white py-2 px-6 rounded-lg text-sm font-normal my-3">
-                    Let's Talk
-                </a>
+                        class="w-fit block bg-black text-white py-2 px-6 rounded-lg text-sm font-normal my-3">
+                        Let's Talk
+                    </a>
                 </div>
                 <div class="col-span-1">
                     <img src="<?= get_template_directory_uri() . '/assets/images/backgrounds/seo_solution.png' ?>" alt="Search Engine Optimization" class=" mx-auto rounded-lg">
@@ -51,7 +51,7 @@
             <div class="w-full px-3">
                 <h3 class="text-[16px] font-bold text-seo mb-[14px] title">OUR STRATEGIES</h3>
 
-                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 font-main title">
+                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 hanuman-font title">
                     <?= the_field("strategy_title") ?>
                 </p>
 
@@ -77,7 +77,7 @@
             <div class="w-full px-3">
                 <h3 class="text-[16px] font-bold text-seo mb-[14px] title">organic traffic</h3>
 
-                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 font-main title">
+                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 hanuman-font title">
                     <?= the_field("traffic_title") ?>
                 </p>
 
@@ -111,18 +111,18 @@
             <!-- Services -->
             <?php $steps = get_field("steps"); ?>
             <?php if ($steps) : ?>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-4 items-center service-container mt-3">
-                    <?php foreach ($steps as $step) :
-                        $title = $step['title'];
-                        $desc = $step['info'];
-                        // $image = $service['image'];
-                        $image = get_template_directory_uri() . '/assets/images/backgrounds/video_Cover.png'
-                    ?>
+                <?php foreach ($steps as $step) :
+                    $title = $step['title'];
+                    $desc = $step['info'];
+                    // $image = $service['image'];
+                    $image = get_template_directory_uri() . '/assets/images/backgrounds/video_Cover.png'
+                ?>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-4 items-center parallax mt-3">
 
                         <!-- Info Section -->
                         <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info">
 
-                            <p class="font-bold text-[40px] font-main my-2 leading-10">
+                            <p class="font-bold text-[40px] hanuman-font my-2 leading-10">
                                 <?= $title ?>
                             </p>
 
@@ -137,8 +137,8 @@
                                 class=" object-contain mx-auto">
                         </div>
 
-                    <?php endforeach; ?>
-                </div>
+                    </div>
+                <?php endforeach; ?>
             <?php endif; ?>
         </div>
 

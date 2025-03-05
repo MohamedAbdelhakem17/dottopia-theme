@@ -11,7 +11,7 @@ function Clients($color = "text-main", $number_color = "text-black", $background
         <div class="transform -translate-y-[50%] w-[90%] mx-auto bg-white rounded-md py-[10px]">
             <p class="text-center <?php echo esc_attr($color); ?> font-bold my-2 text-[22px] md:text-[26px] title"> Clients </p>
 
-            <p class="font-bold text-[23px] md:text-4xl text-center font-main leading-[25px] md:leading-[40px] description">
+            <p class="font-bold text-[23px] md:text-4xl text-center hanuman-font leading-[25px] md:leading-[40px] description">
                 Trusted by over
                 <span class="<?php echo esc_attr($number_color); ?> p-2 inline-block" style="
                     background-image: url('<?php echo esc_url($background); ?>'); 
@@ -22,7 +22,7 @@ function Clients($color = "text-main", $number_color = "text-black", $background
                 </span>
                 <br class="hidden md:block" /> clients in various industries
             </p>
-            
+
         </div>
 
         <section>

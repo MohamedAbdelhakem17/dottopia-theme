@@ -17,7 +17,7 @@ get_header();
         <!-- Content -->
         <div class="container w-full h-full flex items-center justify-center flex-col p-5 relative z-10 mx-auto">
             <h3
-                class="capitalize text-white text-start md:text-center text-[30px] leading-[40px] w-[90%] self-start md:self-auto md:text-5xl md:leading-[54px] lg:w-[50%] font-main font-bold md:mx-auto mx-0">
+                class="capitalize text-white text-start md:text-center text-[30px] leading-[40px] w-[90%] self-start md:self-auto md:text-5xl md:leading-[54px] lg:w-[50%] hanuman-font font-bold md:mx-auto mx-0">
                 <?php echo $hero_section_title; ?>
             </h3>
 
@@ -55,7 +55,7 @@ get_header();
             <div class="w-full px-3">
                 <h3 class="text-[16px] font-bold text-main mb-[14px] title">About Dottopia </h3>
 
-                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 font-main title">
+                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 hanuman-font title">
                     Who We Are
                 </p>
 
@@ -73,7 +73,7 @@ get_header();
         <div class="container mx-auto px-4 py-5 img-container">
 
             <h3
-                class="text-center font-bold text-white text-[25px] md:text-[45px] font-main mb-[14px] leading-[24px] md:leading-12 title">
+                class="text-center font-bold text-white text-[25px] md:text-[45px] hanuman-font mb-[14px] leading-[24px] md:leading-12 title">
                 Our Mission <br class="hidden md:block" />& Vision
             </h3>
 
@@ -98,7 +98,7 @@ get_header();
                             </div>
                             <div class="p-2">
                                 <h3
-                                    class="font-bold text-main py-3 text-[16px] md:text-[20px] font-hanuman mb-[14px] leading-10">
+                                    class="font-bold text-main py-3 text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-10">
                                     Our Mission
                                 </h3>
                                 <p class="font-light text-[12px] text-white leading-[17px]">
@@ -125,7 +125,7 @@ get_header();
                             </div>
                             <div class="p-2">
                                 <h3
-                                    class="font-bold text-main py-3 text-[16px] md:text-[20px] font-hanuman mb-[14px] leading-10">
+                                    class="font-bold text-main py-3 text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-10">
                                     Our Vision
                                 </h3>
                                 <p class="font-light text-[12px] text-white leading-[17px]">
@@ -142,7 +142,7 @@ get_header();
     </section>
     <!-- End </Mission and Vision> -->
 
-    <!-- Start <achievements number> -->
+    <!-- Start <our Journey> -->
     <section class="py-10 px-4 bg-[#FFF5D1]">
         <?php
         $title = get_field("title");
@@ -153,26 +153,37 @@ get_header();
 
             <div class="col-span-1">
                 <h2 class="uppercase font-bold text-digital text-[22px] text-center md:text-[18px] md:text-left">Journey</h2>
-                <h3 class="font-main font-bold text-[30px] leading-[35px] text-center md:text-start md:text-[40px] md:leading-[50px] my-3"><?= $title ?></h3>
-                <p class="w-full text-center md:text-start font-sub font-[200] mt-2 text-gray-500 md:w-[80%]"><?= $discription ?></p>
+                <h3 class="hanuman-font font-bold text-[30px] leading-[35px] text-center md:text-start md:text-[40px] md:leading-[50px] my-3">
+                    <?= esc_html($title) ?>
+                </h3>
+                <p class="w-full text-center md:text-start font-sub font-[200] mt-2 text-gray-500 md:w-[80%]">
+                    <?= ($discription) ?>
+                </p>
             </div>
 
             <div class="col-span-1 grid grid-cols-2 items-center p-0 md:p-5 md:mt-0 mt-4 gap-y-3">
-                <?php foreach ($achievements_statistics as $key => $value) : ?>
-                    <div class="col-span-1 flex items-center flex-col justify-center md:p-4 p-1">
-                        <h4 class="font-[300] text-[14px] "><?= $value['label'] ?></h4>
-                        <p class="text-digital font-extrabold text-3xl mt-2">
-                            <?= ($key != 1 ? '+' : '') . $value['number'] ?>
-                            <span class="text-[18px] inline-block -translate-x-[8px]"><?= $value["sympole"] ?></span>
-                        </p>
-                        <p class="font-[700] -tracking-tighter  capitalize"><?= $value["defineiton"] ?></p>
-                    </div>
-                <? endforeach; ?>
-
+                <?php if (!empty($achievements_statistics) && is_array($achievements_statistics)) : ?>
+                    <?php foreach ($achievements_statistics as $key => $value) : ?>
+                        <div class="col-span-1 flex items-center flex-col justify-center md:p-4 p-1">
+                            <h4 class="font-[300] text-[14px]"><?= esc_html($value['label']) ?></h4>
+                            <p class="text-digital font-extrabold text-3xl mt-2">
+                                <?= ($key != 1 ? '+' : '') ?>
+                                <span class="counter text-5xl" data-count="<?= esc_attr($value['number']) ?>">
+                                    <?= esc_html($value['number']) ?>
+                                </span>
+                                <span class="text-[18px] inline-block -translate-x-[8px]">
+                                    <?= esc_html($value["sympole"]) ?>
+                                </span>
+                            </p>
+                            <p class="font-[700] -tracking-tighter capitalize"><?= ($value["defineiton"]) ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </section>
-    <!-- End </achievements number> -->
+    <!-- End </our Journey> -->
+
 
     <!-- Start <service> -->
     <section class="py-10 px-4 container mx-auto">
@@ -180,32 +191,42 @@ get_header();
             <!-- Header -->
             <h3 class="uppercase font-bold text-main text-[22px] text-center md:text-[18px] md:text-center"> Values</h3>
             <p
-                class="font-main font-bold text-[30px] leading-[35px] text-start md:text-center md:text-[40px] md:leading-[50px] my-3">
+                class="hanuman-font font-bold text-[30px] leading-[35px] text-start md:text-center md:text-[40px] md:leading-[50px] my-3">
                 Our Values
             </p>
 
             <!-- Services -->
             <?php $values = get_field("values"); ?>
             <?php if ($values) : ?>
-                <div class="grid grid-cols-1 gap-y-6 md:gap-y-4 service-container mt-3">
-                    <?php foreach ($values as $index => $value) : ?>
-                        <div
-                            class="flex flex-col md:flex-row <?= $index % 2 !== 0 ? 'md:flex-row-reverse' : '' ?> items-center gap-4 md:gap-8">
+                <?php foreach ($values as $index => $value) : ?>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-4 items-center parallax mt-3">
+                        <?php if ($index % 2 == 0) : ?>
+                            <!-- Text Section First -->
+                            <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info">
+                                <h3 class="text-[25px] md:text-[40px] hanuman-font font-bold"><?= $value['title'] ?></h3>
+                                <p class="text-sm md:text-base text-gray-700 font-sub"><?= $value['description'] ?></p>
+                            </div>
                             <!-- Image Section -->
-                            <div class="w-full md:w-1/2 px-4">
+                            <div class="px-4 md:px-8 col-span-1 md:col-span-1">
+                                <img src="<?= esc_url($value['image']) ?>" alt="<?= esc_attr(strip_tags($value['title'])) ?>"
+                                    class="object-contain mx-auto">
+                            </div>
+                        <?php else : ?>
+                            <!-- Image Section First -->
+                            <div class="px-4 md:px-8 col-span-1 md:col-span-1">
                                 <img src="<?= esc_url($value['image']) ?>" alt="<?= esc_attr(strip_tags($value['title'])) ?>"
                                     class="object-contain mx-auto">
                             </div>
                             <!-- Text Section -->
-                            <div class="w-full md:w-1/2 px-4 text-start">
-                                <h3 class="text-[25px] md:text-[40px] font-main font-bold"><?= $value['title'] ?></h3>
+                            <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info">
+                                <h3 class="text-[25px] md:text-[40px] hanuman-font font-bold"><?= $value['title'] ?></h3>
                                 <p class="text-sm md:text-base text-gray-700 font-sub"><?= $value['description'] ?></p>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
 
+            <?php endif; ?>
         </div>
 
     </section>
