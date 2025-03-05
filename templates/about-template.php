@@ -8,7 +8,7 @@ get_header();
 <main>
     <!-- Start <hero> -->
     <?php
-    $hero_section_title = preg_replace('/\{\{(.*?)\}\}/', '<span class="text-main">$1</span>', get_field("hero_title"));
+    $hero_section_title = preg_replace('/\{\{(.*?)\}\}/', '<h1 class="text-main inline-block">$1</h1>', get_field("hero_title"));
     $hero_description = get_field("hero_discreption");
     $background_image = esc_url(get_field("background_image"));
     ?>
@@ -16,18 +16,19 @@ get_header();
         style="background: var(--gradient-service), url('<?php echo $background_image; ?>') center/cover no-repeat;">
         <!-- Content -->
         <div class="container w-full h-full flex items-center justify-center flex-col p-5 relative z-10 mx-auto">
-            <h3
+            <div data-aos="zoom-in-down"
                 class="capitalize text-white text-start md:text-center text-[30px] leading-[40px] w-[90%] self-start md:self-auto md:text-5xl md:leading-[54px] lg:w-[50%] hanuman-font font-bold md:mx-auto mx-0">
                 <?php echo $hero_section_title; ?>
-            </h3>
+            </div>
 
             <p
-                class="font-sub my-4 md:my-8 font-normal text-white text-center text-[16px] md:text-2xl mx-auto w-full lg:w-[50%]">
+                class="font-sub my-4 md:my-8 font-normal text-white text-center text-[16px] md:text-2xl mx-auto w-full lg:w-[50%]" data-aos="fade-down" data-aos-delay="100">
                 <?php echo $hero_description; ?>
             </p>
 
             <button class="bg-main text-black py-2.5 px-5 rounded-md font-normal
-            hover:bg-white hover:text-primary transition-all duration-300" data-inview="button-fadeInUp">
+            hover:bg-white hover:text-primary transition-all duration-300" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
                 Get a Proposal
             </button>
         </div>
@@ -53,11 +54,14 @@ get_header();
 
             <!-- Info Text -->
             <div class="w-full px-3">
-                <h3 class="text-[16px] font-bold text-main mb-[14px] title">About Dottopia </h3>
+                <div data-aos="fade-left">
 
-                <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 hanuman-font title">
-                    Who We Are
-                </p>
+                    <h3 class="text-[16px] font-bold text-main mb-[14px] title">About Dottopia </h3>
+
+                    <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 hanuman-font title">
+                        Who We Are
+                    </p>
+                </div>
 
                 <p class="py-3 md:py-6 font-normal text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] description">
                     At Dottopia digital marketing company, we’re a passionate team of digital innovators, creators, and strategists dedicated to helping brands shine in the digital landscape. Our journey began with a simple idea: to blend creativity with data-driven strategies to deliver impactful digital marketing solutions.
@@ -72,7 +76,7 @@ get_header();
         class="roadblocks py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-main/50 after:shadow-main after:rounded-full after:w-[30px]  after:h-[30px] after:translate-x-[50%]">
         <div class="container mx-auto px-4 py-5 img-container">
 
-            <h3
+            <h3 data-aos="fade-up" data-aos-offset="50"
                 class="text-center font-bold text-white text-[25px] md:text-[45px] hanuman-font mb-[14px] leading-[24px] md:leading-12 title">
                 Our Mission <br class="hidden md:block" />& Vision
             </h3>
@@ -83,10 +87,10 @@ get_header();
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 md:mt-32 justify-center place-items-center mx-auto">
 
                 <!-- Box One -->
-                <div class="col-span-1 relative  mx-auto">
+                <div class="col-span-1 relative  mx-auto" data-aos="fade-left">
                     <img src="<?= get_template_directory_uri() . "/assets/images/icons/vision.svg" ?>"
                         alt="Increased Visibility and Traffic"
-                        class="absolute top-[-15px] right-[-10px] z-20 w-[200px]" />
+                        class="absolute top-[-35px] right-[-10px] z-20 w-[150px]" />
                     <div
                         class="h-full top-0 left-0 p-6 w-full sm:w-[90%] max-w-md mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-main/50">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
@@ -111,9 +115,9 @@ get_header();
                 </div>
 
                 <!-- Box Two -->
-                <div class="col-span-1 relative  mx-auto">
+                <div class="col-span-1 relative  mx-auto" data-aos="fade-right">
                     <img src="<?= get_template_directory_uri() . "/assets/images/icons/mission.svg" ?>"
-                        alt="Higher Credibility and Trust" class="absolute top-[-15px] right-[-10px] z-20" />
+                        alt="Higher Credibility and Trust" class="absolute top-[-25px] right-[-10px] z-20" />
                     <div
                         class="h-full top-0 left-0 p-6 w-full sm:w-[90%] max-w-md mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-main/50">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
@@ -152,10 +156,12 @@ get_header();
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 p-4">
 
             <div class="col-span-1">
-                <h2 class="uppercase font-bold text-digital text-[22px] text-center md:text-[18px] md:text-left">Journey</h2>
-                <h3 class="hanuman-font font-bold text-[30px] leading-[35px] text-center md:text-start md:text-[40px] md:leading-[50px] my-3">
-                    <?= esc_html($title) ?>
-                </h3>
+                <div data-aos="fade-right">
+                    <h2 class="uppercase font-bold text-digital text-[22px] text-center md:text-[18px] md:text-left">Journey</h2>
+                    <h3 class="hanuman-font font-bold text-[30px] leading-[35px] text-center md:text-start md:text-[40px] md:leading-[50px] my-3">
+                        <?= esc_html($title) ?>
+                    </h3>
+                </div>
                 <p class="w-full text-center md:text-start font-sub font-[200] mt-2 text-gray-500 md:w-[80%]">
                     <?= ($discription) ?>
                 </p>
@@ -189,25 +195,27 @@ get_header();
     <section class="py-10 px-4 container mx-auto">
         <div class="lg:w-[90%] mx-auto text-center">
             <!-- Header -->
-            <h3 class="uppercase font-bold text-main text-[22px] text-center md:text-[18px] md:text-center"> Values</h3>
-            <p
-                class="hanuman-font font-bold text-[30px] leading-[35px] text-start md:text-center md:text-[40px] md:leading-[50px] my-3">
-                Our Values
-            </p>
+            <div data-aos="fade-down" data-aos-offset="50">
+                <h3 class="uppercase font-bold text-main text-[22px] text-center md:text-[18px] md:text-center"> Values</h3>
+                <p
+                    class="hanuman-font font-bold text-[30px] leading-[35px] #??text-center md:text-[40px] md:leading-[50px] my-3">
+                    Our Values
+                </p>
+            </div>
 
             <!-- Services -->
             <?php $values = get_field("values"); ?>
             <?php if ($values) : ?>
                 <?php foreach ($values as $index => $value) : ?>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-4 items-center parallax mt-3">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-4 items-center parallax mt-3">
                         <?php if ($index % 2 == 0) : ?>
                             <!-- Text Section First -->
-                            <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info">
+                            <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info order-2 md:order-1">
                                 <h3 class="text-[25px] md:text-[40px] hanuman-font font-bold"><?= $value['title'] ?></h3>
                                 <p class="text-sm md:text-base text-gray-700 font-sub"><?= $value['description'] ?></p>
                             </div>
                             <!-- Image Section -->
-                            <div class="px-4 md:px-8 col-span-1 md:col-span-1">
+                            <div class="px-4 md:px-8 col-span-1 md:col-span-1 order-1 md:order-2">
                                 <img src="<?= esc_url($value['image']) ?>" alt="<?= esc_attr(strip_tags($value['title'])) ?>"
                                     class="object-contain mx-auto">
                             </div>

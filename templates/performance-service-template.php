@@ -7,7 +7,7 @@ get_header();
 <main>
     <!-- Start <hero> -->
     <?php
-    $hero_section_title = preg_replace('/\{\{(.*?)\}\}/', '<span class="text-performance ">$1</span>', get_field("hero_title"));
+    $hero_section_title = preg_replace('/\{\{(.*?)\}\}/', '<h1 class="text-performance inline-block">$1</h1>', get_field("hero_title"));
     $hero_description = get_field("hero_discreption");
     $background_image = esc_url(get_field("background_image"));
     ?>
@@ -15,16 +15,17 @@ get_header();
 
         <!-- Content -->
         <div class="container w-full h-full flex items-center justify-center flex-col p-5 relative z-10 mx-auto">
-            <h3 class="capitalize text-white text-start md:text-center text-[30px] leading-[40px] w-[90%] self-start md:self-auto md:text-5xl md:leading-[54px] lg:w-[50%] hanuman-font font-bold md:mx-auto mx-0">
+            <div class="capitalize text-white text-center text-[25px] leading-[40px]  self-start md:self-auto md:text-5xl md:leading-[54px] lg:w-[50%] hanuman-font font-bold md:mx-auto mx-0" data-aos="zoom-in-down">
                 <?php echo $hero_section_title; ?>
-            </h3>
+            </div>
 
-            <p class="font-sub my-4 md:my-8 font-normal text-white text-start text-[16px] md:text-2xl break-normal mx-auto w-full lg:w-[50%]">
+            <p class="font-sub my-4 md:my-8 font-normal text-white text-center text-[16px] md:text-2xl break-normal mx-auto w-full lg:w-[50%]" data-aos="fade-down" data-aos-delay="100">
                 <?php echo $hero_description; ?>
             </p>
 
             <button class="bg-main text-black py-2.5 px-5 rounded-md font-normal
-            hover:bg-white hover:text-primary transition-all duration-300" data-inview="button-fadeInUp">
+            hover:bg-white hover:text-primary transition-all duration-300" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
                 Get a Proposal
             </button>
         </div>
@@ -35,7 +36,7 @@ get_header();
     <!-- Start <clients> -->
     <?php
     require_once get_template_directory() . '/templates-parts/clients-part.php';
-    Clients("text-performance ", "text-white", "color_performance _bg.svg");
+    Clients("text-performance ", "text-black", "color_preformance_bg.svg");
     ?>
     <!-- End </clients> -->
 
@@ -49,8 +50,10 @@ get_header();
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 p-4">
 
             <div class="col-span-1">
-                <h2 class="uppercase font-bold text-performance  text-[22px] text-center md:text-[18px] md:text-left">achievements</h2>
-                <h3 class="hanuman-font font-bold text-[25px] leading-[35px] text-center md:text-start md:text-[40px] md:leading-[50px] my-3"><?= $achievements_title ?></h3>
+                <div data-aos="fade-left">
+                    <h2 class="uppercase font-bold text-performance  text-[22px]  md:text-[18px] text-start">achievements</h2>
+                    <h3 class="hanuman-font font-bold text-[25px] leading-[35px]  md:text-start md:text-[40px] md:leading-[50px] my-3"><?= $achievements_title ?></h3>
+                </div>
                 <p class="w-full text-center md:text-start font-sub font-[200] mt-2  md:w-[80%]"><?= $achievements_description ?></p>
             </div>
 
@@ -71,23 +74,22 @@ get_header();
     <!-- Start <achievements> -->
     <section class="roadblocks py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-performance /90 after:shadow-performance  after:rounded-full after:w-[30px]  after:h-[30px] after:translate-x-[50%]">
         <div class="container mx-auto px-4 py-5 img-container">
-
-            <div>
+            <div data-aos="fade-up" data-aos-offset="50">
                 <h2 class="text-[22px] md:text-[18px] font-bold  mb-[14px] md:mb-[16px] text-performance  text-center uppercase">achievements</h2>
                 <h3 class="text-center font-bold text-white text-[25px] md:text-[40px] hanuman-font mb-[14px] leading-[24px] md:leading-10 title">
                     Maximize your <br class="hidden md:block" />Digital Sales
                 </h3>
-
-                <p class="font-normal md:text-[13px] text-[15px] text-start md:text-center text-white leading-[22.4px] font-sub md:w-[80%] mx-auto  description">
-                    Our performance marketing agency’s qualified SEO web services resonate specifically with a personalized strategy to align with your business goals. We delve deep into market trends, competitor analysis and user behavior to ensure every optimization tactic is purposeful and results-driven with our SEO services packages.</p>
             </div>
+
+            <p class="font-normal md:text-[13px] text-[15px] text-start md:text-center text-white leading-[22.4px] font-sub md:w-[80%] mx-auto  description">
+                Our performance marketing agency’s qualified SEO web services resonate specifically with a personalized strategy to align with your business goals. We delve deep into market trends, competitor analysis and user behavior to ensure every optimization tactic is purposeful and results-driven with our SEO services packages.</p>
 
             <?php $box_bg = get_template_directory_uri() . '/assets/images/backgrounds/box_bg.svg';  ?>
             <div
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 md:mt-32 justify-center place-items-center mx-auto">
 
                 <!-- Box One -->
-                <div class="col-span-1 relative  mx-auto">
+                <div class="col-span-1 relative  mx-auto" data-aos="fade-left">
                     <img src="<?= get_template_directory_uri() . "/assets/images/icons/prefo_1.svg" ?>"
                         alt="Increased Visibility and Traffic"
                         class="absolute top-[-15px] right-[-10px] z-20 w-[130px]" />
@@ -114,7 +116,7 @@ get_header();
                 </div>
 
                 <!-- Box Two -->
-                <div class="col-span-1 relative  mx-auto">
+                <div class="col-span-1 relative  mx-auto" data-aos="fade-right">
                     <img src="<?= get_template_directory_uri() . "/assets/images/icons/prefo_2.svg" ?>"
                         alt="Higher Credibility and Trust" class="absolute top-[-15px] right-[-10px] z-20" />
                     <div
@@ -149,10 +151,12 @@ get_header();
     <section class="py-10 px-4 container mx-auto">
         <div class="lg:w-[90%] mx-auto text-center">
             <!-- Header -->
-            <h3 class="uppercase font-bold text-performance  text-[22px] text-center md:text-[18px] md:text-center">Services</h3>
-            <p class="hanuman-font font-bold text-[30px] leading-[35px] text-start md:text-center md:text-[40px] md:leading-[50px] my-3">
-                Boost your Website Traffic <br class="hidden md:block" /> With performance Web Services
-            </p>
+            <div data-aos="fade-up" data-aos-offset="50">
+                <h3 class="uppercase font-bold text-performance  text-[22px] text-center md:text-[18px] md:text-center">Services</h3>
+                <p class="hanuman-font font-bold text-[30px] leading-[35px] text-start md:text-center md:text-[40px] md:leading-[50px] my-3">
+                    Boost your Website Traffic <br class="hidden md:block" /> With performance Web Services
+                </p>
+            </div>
 
             <!-- Services -->
             <?php $services = get_field("services"); ?>
@@ -170,7 +174,7 @@ get_header();
                                 <?= $title ?>
                             </h3>
 
-                            <p class="mb:mt-4 text-sm md:text-base text-gray-700 lg:w-[80%] font-sub">
+                            <p class="mb:mt-4 text-lg md:text-base text-gray-700 lg:w-[80%] font-sub">
                                 <?= $desc ?>
                             </p>
                         </div>

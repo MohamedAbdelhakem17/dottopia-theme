@@ -12,12 +12,13 @@
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-10 partner">
-            <?php $clients = get_field('clients', 'option'); ?>
-            <?php if ($clients) : ?>
-                <?php foreach ($clients as $client) : ?>
+            <?php $partners = get_field('partners', 'option'); ?>
+
+            <?php if ($partners) : ?>
+                <?php foreach ($partners as $partner) : ?>
                     <?php
-                    $image_url = isset($client) ? esc_url($client) : '';
-                    $image_alt = isset($client) ? esc_attr($client) : 'Client Logo';
+                    $image_url = isset($partner['url']) ? esc_url($partner['url']) : '';
+                    $image_alt = !empty($partner['alt']) ? esc_attr($partner['alt']) : 'Client Logo';
                     ?>
                     <div class="p-4 flex items-center justify-center">
                         <?php if ($image_url) : ?>
@@ -27,5 +28,6 @@
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
+
     </div>
 </section>

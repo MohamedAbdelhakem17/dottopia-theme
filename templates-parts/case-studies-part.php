@@ -7,7 +7,6 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
         "post_type"      => "case_studies",
         "posts_per_page" => $cases_number,
         "fields"         => "ids", // Optimize query by fetching only post IDs
-
     );
 
     $case_studies_query = new WP_Query($args);
@@ -23,7 +22,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                 $title       = get_field("hero_title", $post_id) ?: 'Default Title';
                 $description = get_field("hero_discreption", $post_id) ?: 'No description available.';
                 $statistics  = get_field("hero_statistics", $post_id) ?: [];
-                $image       = get_the_post_thumbnail_url($post_id, 'thumbnail') ?: $fallback_image;
+                $image       = get_the_post_thumbnail_url($post_id, 'full') ?: $fallback_image;
 
                 // Ensure category exists
                 $categories = get_the_category($post_id);
@@ -31,7 +30,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                 $category_slug = !empty($categories) ? $categories[0]->slug : 'main';
             ?>
 
-                <div class="bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10 fade" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="post-item bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10 fade" data-aos="zoom-in" data-aos-duration="1000"  data-category="<?php echo esc_attr($category_slug); ?>">
                     <!-- heading -->
                     <div class="flex flex-wrap justify-between items-center py-4 px-10">
                         <h3 class="font-bold hanuman-font text-2xl md:text-3xl " data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay="100"><?= esc_html($main_title); ?></h3>
@@ -48,7 +47,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                     <div class="p-4 rounded-lg border-transparent border-[2px] border-t-<?= esc_attr(detect_color($category_slug)); ?> grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 px-10">
                         <!-- Image -->
                         <div class="lg:col-span-2 md:col-span-5 self-center">
-                            <img src="<?= esc_url($image); ?>" alt="<?= esc_attr($main_title); ?> Image" class="w-fit md:aspect-[1/.6] rounded-md" />
+                            <img src="<?= esc_url($image); ?>" alt="<?= esc_attr($main_title); ?> Image" class="w-full md:aspect-[1/.6] rounded-md" />
 
                             <!-- category button -->
                             <h4 class="bg-<?= esc_attr(detect_color($category_slug)); ?> text-white px-4 py-2 rounded-[50px] font-normal text-[12px] mt-4 md:mt-6 w-fit">

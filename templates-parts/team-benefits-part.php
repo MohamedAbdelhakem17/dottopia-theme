@@ -23,14 +23,14 @@ $benefits = [
 <section class="roadblocks py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-main/50 after:shadow-custom after:rounded-full after:w-[30px]  after:h-[30px] after:translate-x-[50%]">
     <div class="container mx-auto px-4 py-5 img-container">
         <div>
-            <h2 class="text-center font-bold text-white text-[25px] md:text-[40px] hanuman-font mb-[14px] leading-10 title">
+            <h2 class="text-center font-bold text-white text-[25px] md:text-[40px] hanuman-font mb-[14px] leading-10 title" data-aos="fade-down">
                 Benefits of Joining our Team
             </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 md:mt-32 justify-center">
             <?php foreach ($benefits as $benefit): ?>
-                <div class="col-span-1 relative p-4 card">
+                <div class="col-span-1 relative p-4 card" data-aos="fade-up">
                     <?php if (end($benefits) !== $benefit):
                     ?>
                         <div class="shadow-2xl w-[150px] h-[150px] absolute bg-main top-[-20px] right-[20px] rounded-full"></div>

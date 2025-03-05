@@ -4,8 +4,8 @@
     <section class="container mx-auto py-12 px-6">
 
         <!-- Title Section -->
-        <h3 class="text-[16px] font-bold  mb-[14px] md:mb-[16px] text-center <?= $title_clore ?>">why choose us</h3>
-        <p class="mb-2 md:mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] text-center">
+        <h3 class="uppercase font-bold text-[22px] text-center md:text-[18px] md:text-center <?= $title_clore ?>" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">why choose us</h3>
+        <p class="mb-2 md:mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             Discover The Spark <br class="hidden md:block" /> That Sets Us Apart
         </p>
         <p class="font-light text-[13px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] font-sub text-center">
@@ -16,7 +16,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-y-4 mt-10 md:justify-center">
 
             <!-- Dottopia Section -->
-            <div class="col-span-1 ">
+            <div class="col-span-1 " data-aos="zoom-out-right">
                 <div class="lg:w-[80%] mx-auto p-6 rounded-lg shadow-md"
                     style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/backgrounds/dottopia_cercil.svg') top right /200px no-repeat, #<?= $background_color ?>">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="dottopia logo"
@@ -33,7 +33,7 @@
             </div>
 
             <!-- Local Marketing Agency Section -->
-            <div class="col-span-1">
+            <div class="col-span-1" data-aos="zoom-out-down">
                 <div class="bg-white p-4 rounded-lg shadow-md h-[100%] lg:w-[80%] mx-auto">
                     <h2 class="text-[24px] font-bold hanuman-font p-4">Local Marketing Agency</h2>
                     <ul class="mt-4 space-y-3 text-gray-700 px-3 py--2">
@@ -48,7 +48,7 @@
             </div>
 
             <!-- In-House Marketing Section -->
-            <div class="col-span-1">
+            <div class="col-span-1" data-aos="zoom-out-left">
                 <div class="bg-white p-6 rounded-lg shadow-md h-[100%] lg:w-[80%] mx-auto">
                     <h2 class=" text-[24px] font-bold hanuman-font p-4 ">In-House Marketing</h2>
                     <ul class="mt-4 space-y-3 text-gray-700 px-3 py--2">
