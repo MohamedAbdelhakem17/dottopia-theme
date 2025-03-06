@@ -322,29 +322,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".contact-swiper-container", {
-        loop: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        centeredSlides: true,
-        slidesPerView: 1,
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
 
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 1,
-                spaceBetween: 5,
-            },
-            1024: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            }
-        },
-    });
+    pagination: {
+        el: ".swiper-pagination",
+        type: "custom",
+        renderCustom: function (swiper, current, total) {
+            return `${current} -  ${total}`;
+        }
+    },
+
+    spaceBetween: 0,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });
