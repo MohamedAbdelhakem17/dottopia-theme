@@ -7,11 +7,18 @@
 <!-- Main Content -->
 <main>
 
-    <section class=" p-5 my-4">
+    <section class="p-5">
         <div class="container mx-auto p-5">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <div class="col-span-1 py-4 px-4 w-full">
-                    <div class="swiper mySwiper w-full">
+
+                <!-- Testimonials -->
+                <div class="col-span-1 py-4 px-4 w-full min-h-[50vh] lg:min-h-auto">
+                    <h1 class="hanuman-font text-5xl font-bold mb-4 leading-[60px]">You Need A Partner? <br class="hidden lg:block"> We're Here To Help.</h1>
+                    <p class="leading-[45px]">Before we start, we would like to better understand your needs.
+                        <br class="hidden lg:block">
+                        We’ll review your application and schedule a free estimation call.
+                    </p>
+                    <!-- <div class="swiper mySwiper w-full">
                         <div class="swiper-wrapper">
                             <?php
                             $testimonials = get_field('testimonial', "option");
@@ -54,9 +61,10 @@
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-pagination"></div>
-                    </div>
+                    </div> -->
                 </div>
 
+                <!-- Contact Form  -->
                 <div class="col-span-1 px-4">
                     <?php the_content(); ?>
                 </div>

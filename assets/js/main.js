@@ -334,7 +334,7 @@ var swiper = new Swiper(".mySwiper", {
         el: ".swiper-pagination",
         type: "custom",
         renderCustom: function (swiper, current, total) {
-            return `${current} -  ${total}`;
+            return `${current}  <span class="h-[2px] w-[35px] mx-2 inline-block bg-gray-600"></span> ${total}`;
         }
     },
 
@@ -343,4 +343,29 @@ var swiper = new Swiper(".mySwiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+});
+
+function Marquee(selector, speed) {
+    const parentSelector = document.querySelector(selector);
+    const content = parentSelector.innerHTML;
+    const firstElement = parentSelector.children[0];
+
+    let i = 0;
+    parentSelector.innerHTML += content; // Clone once for seamless effect
+
+    function animate() {
+        firstElement.style.marginLeft = `-${i}px`;
+        if (i > firstElement.clientWidth) {
+            i = 0;
+        }
+        i += speed;
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+
+// Run after window loads
+window.addEventListener('load', function () {
+    Marquee('.marquee', 0.5);
 });

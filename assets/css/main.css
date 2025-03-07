@@ -540,8 +540,8 @@
   .relative {
     position: relative;
   }
-  .static {
-    position: static;
+  .sticky {
+    position: sticky;
   }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
@@ -572,6 +572,9 @@
   }
   .top-\[50\%\] {
     top: 50%;
+  }
+  .top-\[50px\] {
+    top: 50px;
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
@@ -774,6 +777,9 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
+  .h-\[2px\] {
+    height: 2px;
+  }
   .h-\[24px\] {
     height: 24px;
   }
@@ -798,6 +804,9 @@
   .h-\[250px\] {
     height: 250px;
   }
+  .h-fit {
+    height: fit-content;
+  }
   .h-full {
     height: 100%;
   }
@@ -806,6 +815,9 @@
   }
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
+  }
+  .min-h-\[50vh\] {
+    min-height: 50vh;
   }
   .min-h-\[70vh\] {
     min-height: 70vh;
@@ -825,8 +837,14 @@
   .w-\[28px\] {
     width: 28px;
   }
+  .w-\[35px\] {
+    width: 35px;
+  }
   .w-\[50\%\] {
     width: 50%;
+  }
+  .w-\[70\%\] {
+    width: 70%;
   }
   .w-\[80\%\] {
     width: 80%;
@@ -1187,20 +1205,17 @@
   .bg-black {
     background-color: var(--color-black);
   }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-gray-600 {
+    background-color: var(--color-gray-600);
+  }
   .bg-main {
     background-color: var(--color-main);
   }
   .bg-main\/20 {
     background-color: color-mix(in oklab, var(--color-main) 20%, transparent);
-  }
-  .bg-main\/60 {
-    background-color: color-mix(in oklab, var(--color-main) 60%, transparent);
-  }
-  .bg-red-900 {
-    background-color: var(--color-red-900);
-  }
-  .bg-red-900\/60 {
-    background-color: color-mix(in oklab, var(--color-red-900) 60%, transparent);
   }
   .bg-seo {
     background-color: var(--color-seo);
@@ -1446,6 +1461,10 @@
     --tw-leading: 40px;
     line-height: 40px;
   }
+  .leading-\[45px\] {
+    --tw-leading: 45px;
+    line-height: 45px;
+  }
   .leading-\[50px\] {
     --tw-leading: 50px;
     line-height: 50px;
@@ -1457,6 +1476,14 @@
   .leading-\[70px\] {
     --tw-leading: 70px;
     line-height: 70px;
+  }
+  .leading-\[90px\] {
+    --tw-leading: 90px;
+    line-height: 90px;
+  }
+  .leading-\[px\] {
+    --tw-leading: px;
+    line-height: px;
   }
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
@@ -1618,11 +1645,6 @@
   .backdrop-filter {
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .transition-\[background-color\] {
     transition-property: background-color;
@@ -1886,6 +1908,11 @@
       width: 95%;
     }
   }
+  .md\:sticky {
+    @media (width >= 48rem) {
+      position: sticky;
+    }
+  }
   .md\:order-1 {
     @media (width >= 48rem) {
       order: 1;
@@ -1974,6 +2001,11 @@
   .md\:block {
     @media (width >= 48rem) {
       display: block;
+    }
+  }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
     }
   }
   .md\:aspect-\[1\/\.6\] {
@@ -2312,6 +2344,16 @@
   .lg\:col-span-3 {
     @media (width >= 64rem) {
       grid-column: span 3 / span 3;
+    }
+  }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
+    }
+  }
+  .lg\:min-h-auto {
+    @media (width >= 64rem) {
+      min-height: auto;
     }
   }
   .lg\:w-1\/2 {
