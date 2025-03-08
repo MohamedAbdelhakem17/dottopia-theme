@@ -21,7 +21,7 @@
                 <?php echo $hero_section_title; ?>
             </div>
 
-            <p class="font-sub my-4 md:my-8 font-normal text-white text-start md:text-center text-[16px] md:text-2xl break-normal mx-auto w-full lg:w-[50%]" data-aos="fade-down" data-aos-delay="100">
+            <p class="roboto-font my-4 md:my-8 font-normal text-white text-start md:text-center text-[16px] md:text-2xl break-normal mx-auto w-full lg:w-[50%]" data-aos="fade-down" data-aos-delay="100">
                 <?php echo $hero_description; ?>
             </p>
 
@@ -56,7 +56,7 @@
                     <h2 class="uppercase font-bold text-seo text-[22px] text-center md:text-[18px] md:text-start">achievements</h2>
                     <h3 class="hanuman-font font-bold text-[30px] leading-[35px] md:text-start text-center md:text-[40px] md:leading-[50px] my-3"><?= $achievements_title ?></h3>
                 </div>
-                <p class="w-full text-center md:text-start font-sub font-[200] mt-2  md:w-[80%]"><?= $achievements_description ?></p>
+                <p class="w-full text-center md:text-start roboto-font font-[300] mt-2  md:w-[80%] text-lg"><?= $achievements_description ?></p>
             </div>
 
             <div class="col-span-1 grid grid-cols-2 items-center p-0 md:p-5 md:mt-0 mt-4 gap-y-3">
@@ -83,7 +83,7 @@
                     Experts in SEO WEB <br class="hidden md:block" />Services
                 </h3>
             </div>
-            <p class="font-normal md:text-[13px] text-[15px] text-start md:text-center text-white leading-[22.4px] font-sub md:w-[80%] mx-auto  description">
+            <p class="font-normal md:text-[13px] text-[15px] text-start md:text-center text-white leading-[22.4px] roboto-font md:w-[80%] mx-auto  description">
                 Our performance marketing agency’s qualified SEO web services resonate specifically with a personalized strategy to align with your business goals. We delve deep into market trends, competitor analysis and user behavior to ensure every optimization tactic is purposeful and results-driven with our SEO services packages. </p>
 
             <?php $box_bg = get_template_directory_uri() . '/assets/images/backgrounds/box_bg.svg';  ?>
@@ -182,7 +182,7 @@
                                 <?= $title ?>
                             </h3>
 
-                            <p class="mb:mt-4 text-sm md:text-base text-gray-700 lg:w-[80%] font-sub">
+                            <p class="mb:mt-4 text-lg text-gray-700 lg:w-[80%] roboto-font">
                                 <?= $desc ?>
                             </p>
                         </div>
@@ -214,7 +214,7 @@
             </div>
 
             <p
-                class="font-normal text-[13px] text-start md:text-center text-white leading-[22.4px] font-sub md:w-[80%] mx-auto description">
+                class="font-normal text-[13px] text-start md:text-center text-white leading-[22.4px] roboto-font md:w-[80%] mx-auto description">
                 In Dottopia, we proudly stand as the epitome of excellence in the digital landscape, offering a comprehensive suite of services that set us apart. Our commitment to client success is unwavering, driven by a unique blend of innovation, expertise, and a relentless pursuit of results.
             </p>
 
@@ -255,7 +255,7 @@
                     Step into Success<br class="hidden md:block" /> with industry giants
                 </p>
             </div>
-            <p class="font-light text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] font-sub description">
+            <p class="font-light text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] roboto-font description">
                 Our collaboration allows us to harness the latest innovations, insights, and cutting-edge tools to elevate your digital presence and marketing strategies.
             </p>
 

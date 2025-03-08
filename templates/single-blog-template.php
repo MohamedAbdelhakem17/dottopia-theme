@@ -15,7 +15,7 @@
 
     // Hero Section
     $title      = get_the_title($post_id);
-    $image      = get_the_post_thumbnail_url($post_id, 'thumbnail') ?: $fallback_image;
+    $image      = get_the_post_thumbnail_url($post_id, 'full') ?: $fallback_image;
     // $user_avatar = get_avatar($user_id) ?: $user_avatar_fallback;
     $user_fullname = $user_info->first_name . ' ' . $user_info->last_name;
 
@@ -40,21 +40,29 @@
     <!-- End </hero> -->
 
     <!-- start <main content> -->
-    <article class="container mx-auto relative  top-[-200px]">
-        <img src="<?= $image ?>" alt="<?= $title ?>" class="object-fit mx-auto w-full aspect-[1/.4] ">
+    <article class="container mx-auto relative top-[-200px]">
+        <img src="<?= $image ?>" alt="<?= $title ?>" class="object-fit mx-auto w-full aspect-[1/.4]">
         <!-- image -->
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-5">
-            <!-- table of Content -->
-            <div class="col-span-1"></div>
-            <!-- blog content -->
-            <div class="col-span-2 [&_h2]:font-bold [&_h2]:text-4xl [&_h2]:w-[90%] [&_h2]:py-5 [&_p]:font-normal [&_p]:text-xl [&_p]:py-5 ">
+        <!-- Table of Content (for small screens) -->
+        <div class="block md:hidden bg-gray-100 p-4 rounded-md my-5">
+            <?php echo do_shortcode('[ez-toc header_label="Table of content" toggle_view="no" initial_view="show" heading_levels="2"]'); ?>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-5 px-3">
+            <!-- Table of Content (for md and larger screens) -->
+            <div class="hidden md:block md:col-span-1 md:sticky top-[50px] h-fit">
+                <?php echo do_shortcode('[ez-toc header_label="Table of content" toggle_view="no" initial_view="show" heading_levels="2"]'); ?>
+            </div>
+
+            <!-- Blog content -->
+            <div class="col-span-1 md:col-span-2 [&_h2]:font-bold [&_h2]:text-4xl [&_h2]:w-[90%] [&_h2]:py-5 [&_p]:font-normal [&_p]:text-xl [&_p]:py-5 relative">
                 <?= $blog_content ?>
             </div>
         </div>
-
     </article>
     <!-- End </main content> -->
+
 
     <!-- Start <blog> -->
     <section class="py-5 px-4 relative  top-[-125px]">
@@ -62,7 +70,7 @@
             <div class="px-4">
                 <!-- Header -->
                 <div class="text-center">
-                    <h2 class="text-[16px] font-bold text-main mb-[14px] md:mb-[16px] font-sub title">Blogs</h2>
+                    <h2 class="text-[16px] font-bold text-main mb-[14px] md:mb-[16px] roboto-font title">Blogs</h2>
                     <h3 class="font-bold text-3xl">Related Insights</h3>
                     <p
                         class="mb-6 text-[14px] font-normal py-3">

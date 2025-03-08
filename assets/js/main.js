@@ -26,22 +26,22 @@
     });
 })();
 
-// Infinity Gallery Slider
-(function () {
-    document.addEventListener("DOMContentLoaded", function () {
-        function startInfiniteScroll(rowClass, speed) {
-            const row = document.querySelector(rowClass);
-            if (!row) return;
+// // Infinity Gallery Slider
+// (function () {
+//     document.addEventListener("DOMContentLoaded", function () {
+//         function startInfiniteScroll(rowClass, speed) {
+//             const row = document.querySelector(rowClass);
+//             if (!row) return;
 
-            while (row.scrollWidth < window.innerWidth * 2) {
-                row.innerHTML += row.innerHTML;
-            }
-        }
+//             while (row.scrollWidth < window.innerWidth * 2) {
+//                 row.innerHTML += row.innerHTML;
+//             }
+//         }
 
-        startInfiniteScroll(".client-carousel-row-1", 20); // Left to right scrolling
-        startInfiniteScroll(".client-carousel-row-2", 20); // Right to left scrolling
-    });
-})();
+//         startInfiniteScroll(".client-carousel-row-1", 20); // Left to right scrolling
+//         startInfiniteScroll(".client-carousel-row-2", 20); // Right to left scrolling
+//     });
+// })();
 
 // FAQ Accordion
 (function () {
@@ -334,7 +334,7 @@ var swiper = new Swiper(".mySwiper", {
         el: ".swiper-pagination",
         type: "custom",
         renderCustom: function (swiper, current, total) {
-            return `${current} -  ${total}`;
+            return `${current}  <span class="h-[2px] w-[35px] mx-2 inline-block bg-gray-600"></span> ${total}`;
         }
     },
 
@@ -343,4 +343,30 @@ var swiper = new Swiper(".mySwiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+});
+function Marquee(selector, speed) {
+    const parentSelector = document.querySelector(selector);
+    const clone = parentSelector.innerHTML;
+    const firstElement = parentSelector.children[0];
+    let i = 0;
+    console.log(firstElement);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+
+    setInterval(function () {
+        firstElement.style.marginLeft = `-${i}px`;
+        if (i > firstElement.clientWidth) {
+            i = 0;
+        }
+        i = i + speed;
+    }, 0);
+}
+
+//after window is completed load
+//1 class selector for marquee
+//2 marquee speed 0.2
+window.addEventListener('load', () => {
+    Marquee('.marquee', 0.4)
+    Marquee('.client-carousel-row-1', 0.4)
+    Marquee('client-carousel-row-2', 0.4)
 });

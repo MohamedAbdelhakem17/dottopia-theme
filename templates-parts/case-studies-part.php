@@ -30,7 +30,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                 $category_slug = !empty($categories) ? $categories[0]->slug : 'main';
             ?>
 
-                <div class="post-item bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10 fade" data-aos="zoom-in" data-aos-duration="1000"  data-category="<?php echo esc_attr($category_slug); ?>">
+                <div class="post-item bg-white rounded-md w-full sm:w-[95%] mx-auto py-4 my-10 fade" data-aos="zoom-in" data-aos-duration="1000" data-category="<?php echo esc_attr($category_slug); ?>">
                     <!-- heading -->
                     <div class="flex flex-wrap justify-between items-center py-4 px-10">
                         <h3 class="font-bold hanuman-font text-2xl md:text-3xl " data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay="100"><?= esc_html($main_title); ?></h3>
@@ -72,7 +72,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                                             after:transform after:-translate-x-[50%] after:-translate-y-[50%] after:rotate-[-45deg] after:rounded-tr-[2px]">
                                                 <?= esc_html($statistic["hero_statistics_number"]); ?><span class="text-xl md:text-2xl">%</span>
                                             </span>
-                                            <p class="text-[12px] md:text-[14px] font-light w-[100px] md:w-[120px] font-sub text-gray-900">
+                                            <p class="text-[12px] md:text-[14px] font-light w-[100px] md:w-[120px] roboto-font text-gray-900">
                                                 <?= esc_html($statistic["hero_statistics_title"]); ?>
                                             </p>
                                         </div>

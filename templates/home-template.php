@@ -24,16 +24,16 @@
                 <span class="text-main font-bold">business cores.</span>
             </h3>
 
-            <p class="roboto-font my-4 md:my-8 font-normal text-white text-center mx-auto" data-aos="fade-down" data-aos-delay="100">
+            <p class="roboto-font my-4 md:my-8 font-normal text-white text-center mx-auto text-lg" data-aos="fade-down" data-aos-delay="100">
                 Reach wider audience and boost your sales with Dottopia,
                 <br class="hidden md:block"> Ready to take the leap?
             </p>
 
-            <button class="bg-main text-black md:py-2.5 md:px-5 py-1 px-3 rounded-md font-normal cursor-pointer 
+            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="bg-main text-black md:py-2.5 md:px-5 py-1 px-3 rounded-md font-normal cursor-pointer 
                 hover:bg-white hover:text-primary transition-all duration-300" data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom">
                 Get a Proposal
-            </button>
+            </a>
         </div>
     </header>
     <!-- End </hero> -->
@@ -58,29 +58,28 @@
         $clients = get_field('clients', 'option');
 
         if ($clients): ?>
-            <div class=" overflow-hidden p-2">
-
+            <div class="overflow-hidden p-2">
                 <!-- First Row (Moves Left) -->
-                <div class=" grid grid-cols-8 gap-4 my-3">
+                <div class="client-carousel-row-1 flex gap-4 my-3">
                     <?php foreach ($clients as $client): ?>
                         <?php $image_url = esc_url($client); ?>
                         <div class="client-logo flex items-center justify-center px-4">
-                            <img src="<?php echo $image_url; ?>" alt="Client Logo" class="object-contain  ">
+                            <img src="<?php echo $image_url; ?>" alt="Client Logo" class="object-contain">
                         </div>
                     <?php endforeach; ?>
                 </div>
 
                 <!-- Second Row (Moves Right) -->
-                <div class=" grid grid-flow-col gap-4  my-3">
-                    <?php foreach ($clients as $clients_reversed): ?>
-                        <?php $image_url = esc_url($clients_reversed); ?>
+                <div class="client-carousel-row-2 flex gap-4 my-3">
+                    <?php foreach (array_reverse($clients) as $client): ?>
+                        <?php $image_url = esc_url($client); ?>
                         <div class="client-logo flex items-center justify-center px-4">
-                            <img src="<?php echo $image_url; ?>" alt="Client Logo" class="object-contain  ">
+                            <img src="<?php echo $image_url; ?>" alt="Client Logo" class="object-contain">
                         </div>
                     <?php endforeach; ?>
                 </div>
-
             </div>
+
         <?php endif; ?>
 
     </section>
@@ -142,8 +141,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 md:mt-32 justify-center">
 
                 <!--  Box  one-->
-                <div class="col-span-1 relative p-4 card"  data-aos="fade-left">
-                    <div class="shadow-2xl w-[250px] h-[250px] absolute bg-[#8122d1e0] top-[-20px] right-[50px] rounded-full"  data-aos="fade-in" data-aos-delay="700"></div>
+                <div class="col-span-1 relative p-4 card" data-aos="fade-left">
+                    <div class="shadow-2xl w-[250px] h-[250px] absolute bg-[#8122d1e0] top-[-20px] right-[50px] rounded-full" data-aos="fade-in" data-aos-delay="700"></div>
                     <div class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-seo">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG" class="left-0 top-0 h-full w-fit absolute z-10" />
                         <div class="w-full h-full relative z-30">
@@ -164,7 +163,7 @@
 
                 <!--  Box Two -->
                 <div class="col-span-1 relative p-4 card" data-aos="zoom-in">
-                    <div class="shadow-2xl w-[250px] h-[250px] absolute bg-[#39c6a1] top-[-20px] right-[50px] rounded-full"  data-aos="fade-in" data-aos-delay="700"></div>
+                    <div class="shadow-2xl w-[250px] h-[250px] absolute bg-[#39c6a1] top-[-20px] right-[50px] rounded-full" data-aos="fade-in" data-aos-delay="700"></div>
                     <div class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-performance ">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG" class="left-0 top-0 h-full w-fit absolute z-10" />
                         <div class="w-full h-full relative z-30">
@@ -184,7 +183,7 @@
                 </div>
 
                 <!-- Box There -->
-                <div class="col-span-1 relative p-4 card"  data-aos="fade-right">
+                <div class="col-span-1 relative p-4 card" data-aos="fade-right">
                     <div class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-digital">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG" class="left-0 top-0 h-full w-fit absolute z-10" />
                         <div class="w-full h-full relative z-30">
@@ -252,7 +251,7 @@
                                 <?= $title ?>
                             </p>
 
-                            <p class="mt-4 text-sm md:text-base text-gray-700 md:w-[80%]">
+                            <p class="mt-4 text-lg text-gray-700 roboto-font  md:w-[80%]">
                                 <?= $desc ?>
                             </p>
 

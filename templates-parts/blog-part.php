@@ -17,7 +17,7 @@ function blog($number = 3, $color = "main")
                 $blog_query->the_post();
                 $post_id    = get_the_ID();
                 $title      = get_the_title($post_id);
-                $image      = get_the_post_thumbnail_url($post_id, 'thumbnail') ?: $fallback_image;
+                $image      = get_the_post_thumbnail_url($post_id, 'full') ?: $fallback_image;
                 $categories = get_the_category($post_id);
                 $category   = !empty($categories) ? $categories[0]->name : 'main';
 

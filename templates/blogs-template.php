@@ -14,7 +14,7 @@
             $post = get_page_by_path($selected_slug, OBJECT, 'post');
             $post_id = $post ? $post->ID : null;
             $title = $post_id ? get_the_title($post_id) : 'No Post Found';
-            $image = $post_id ? get_the_post_thumbnail_url($post_id, 'thumbnail') ?: $fallback_image : $fallback_image;
+            $image = $post_id ? get_the_post_thumbnail_url($post_id, 'full') ?: $fallback_image : $fallback_image;
             $categories = $post_id ? get_the_category($post_id) : [];
             $category = !empty($categories) ? $categories[0]->name : 'Main';
             $word_count = $post_id ? str_word_count(strip_tags(get_post_field('post_content', $post_id))) : 0;
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="col-span-1 p-5">
-                    <img data-aos="fade-down-left" src="<?= esc_url($image) ?>" alt="Blog Image" class="mx-auto rounded-lg object-contain w-[80%]">
+                    <img data-aos="fade-down-left" src="<?= esc_url($image) ?>" alt="Blog Image" class="mx-auto rounded-lg object-contain">
                 </div>
             </div>
         </div>

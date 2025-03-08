@@ -11,7 +11,7 @@
         </div>
 
         <!-- Button Section  -->
-        <button class="bg-black text-white py-2 px-4 rounded-md font-sub font-normal text-[14px] md:text-[16px] hover:bg-main transition-[background-color] duration-300 cursor-pointer">
+        <button class="bg-black text-white py-2 px-4 rounded-md roboto-font font-normal text-[14px] md:text-[16px] hover:bg-main transition-[background-color] duration-300 cursor-pointer">
             Book A Meeting
         </button>
     </div>

@@ -8,7 +8,7 @@
         <p class="mb-2 md:mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             Discover The Spark <br class="hidden md:block" /> That Sets Us Apart
         </p>
-        <p class="font-light text-[13px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] font-sub text-center">
+        <p class="font-light text-[13px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] roboto-font text-center">
             We craft strategies that drive results. Here’s a glimpse into why choosing us is
             choosing to illuminate your path to success. </p>
 

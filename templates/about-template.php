@@ -22,7 +22,7 @@ get_header();
             </div>
 
             <p
-                class="font-sub my-4 md:my-8 font-normal text-white text-center text-[16px] md:text-2xl mx-auto w-full lg:w-[50%]" data-aos="fade-down" data-aos-delay="100">
+                class="roboto-font my-4 md:my-8 font-normal text-white text-center text-[16px] md:text-2xl mx-auto w-full lg:w-[50%]" data-aos="fade-down" data-aos-delay="100">
                 <?php echo $hero_description; ?>
             </p>
 
@@ -48,8 +48,7 @@ get_header();
 
             <!-- Image Container -->
             <div class="w-full relative">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/dottopia.png'); ?>" alt="Video Cover" class="w-fit mx-auto" />
-                <i class="absolute top-[50%] left-[50%] text-white -translate-x-[50%] -translate-y-[50%] fas fa-play text-3xl"></i>
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/dottopia.png'); ?>" alt="About Dottopia digital marketing company" class="w-fit mx-auto" />
             </div>
 
             <!-- Info Text -->
@@ -162,7 +161,7 @@ get_header();
                         <?= esc_html($title) ?>
                     </h3>
                 </div>
-                <p class="w-full text-center md:text-start font-sub font-[200] mt-2 text-gray-500 md:w-[80%]">
+                <p class="w-full text-center md:text-start  roboto-font font-[300] mt-2 text-gray-500 md:w-[80%] text-lg">
                     <?= ($discription) ?>
                 </p>
             </div>
@@ -191,7 +190,7 @@ get_header();
     <!-- End </our Journey> -->
 
 
-    <!-- Start <service> -->
+    <!-- Start <value> -->
     <section class="py-10 px-4 container mx-auto">
         <div class="lg:w-[90%] mx-auto text-center">
             <!-- Header -->
@@ -203,7 +202,7 @@ get_header();
                 </p>
             </div>
 
-            <!-- Services -->
+            <!-- values -->
             <?php $values = get_field("values"); ?>
             <?php if ($values) : ?>
                 <?php foreach ($values as $index => $value) : ?>
@@ -212,7 +211,7 @@ get_header();
                             <!-- Text Section First -->
                             <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info order-2 md:order-1">
                                 <h3 class="text-[25px] md:text-[40px] hanuman-font font-bold"><?= $value['title'] ?></h3>
-                                <p class="text-sm md:text-base text-gray-700 font-sub"><?= $value['description'] ?></p>
+                                <p class="text-lg text-gray-700 roboto-font"><?= $value['description'] ?></p>
                             </div>
                             <!-- Image Section -->
                             <div class="px-4 md:px-8 col-span-1 md:col-span-1 order-1 md:order-2">
@@ -228,7 +227,7 @@ get_header();
                             <!-- Text Section -->
                             <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info">
                                 <h3 class="text-[25px] md:text-[40px] hanuman-font font-bold"><?= $value['title'] ?></h3>
-                                <p class="text-sm md:text-base text-gray-700 font-sub"><?= $value['description'] ?></p>
+                                <p class="text-lg text-gray-700 roboto-font"><?= $value['description'] ?></p>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -238,7 +237,7 @@ get_header();
         </div>
 
     </section>
-    <!-- End </service> -->
+    <!-- End </value> -->
 
     <!-- Start <PARTNERS> -->
     <?php require_once get_template_directory() . "/templates-parts/partners-part.php" ?>

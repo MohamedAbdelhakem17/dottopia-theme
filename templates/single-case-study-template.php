@@ -78,7 +78,7 @@ while (have_posts()) : the_post();
                                             after:transform after:-translate-x-[50%] after:-translate-y-[50%] after:rotate-[-45deg] after:rounded-tr-[2px]">
                                             <?= esc_html($statistic["hero_statistics_number"]); ?><span class="text-xl md:text-2xl">%</span>
                                         </span>
-                                        <p class="text-[12px] md:text-[14px] font-light w-[100px] md:w-[120px] font-sub text-gray-900">
+                                        <p class="text-[12px] md:text-[14px] font-light w-[100px] md:w-[120px] roboto-font text-gray-900">
                                             <?= esc_html($statistic["hero_statistics_title"]); ?>
                                         </p>
                                     </div>
@@ -213,7 +213,7 @@ while (have_posts()) : the_post();
 
         <!-- Start <testimonials> -->
         <?php require_once get_template_directory() . "/templates-parts/testimonials-part.php";
-        Testimonials("#ffdd6a","text-".detect_color($category_slug),"#FFF9E6","text-".detect_color($category_slug))
+        Testimonials("#ffdd6a", "text-" . detect_color($category_slug), "#FFF9E6", "text-" . detect_color($category_slug))
         ?>
         <!-- End </testimonials> -->
 
@@ -222,7 +222,7 @@ while (have_posts()) : the_post();
             <div class="px-4">
                 <!-- Header -->
                 <div class="text-center">
-                    <h3 class="text-[16px] font-bold mb-[14px] md:mb-[16px] font-sub title">Case Studies</h3>
+                    <h3 class="text-[16px] font-bold mb-[14px] md:mb-[16px] roboto-font title">Case Studies</h3>
                     <p
                         class="mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] hanuman-font description">
                         Real Results, Real Feedback. <br class="hidden md:block" /> Hear From our Clients.

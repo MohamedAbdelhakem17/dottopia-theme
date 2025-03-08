@@ -6,7 +6,7 @@
             <p class="mb-2 md:mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] hanuman-font title" data-aos="fade-left" data-aos-anchor-placement="top-bottom">
                 Step into Success<br class="hidden md:block" /> with industry giants
             </p>
-            <p class="font-light text-[13px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] font-sub description">
+            <p class="font-light text-[13px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] roboto-font description">
                 Our collaboration allows us to harness the latest innovations, insights, and cutting-edge tools to elevate your digital presence and marketing strategies.
             </p>
         </div>

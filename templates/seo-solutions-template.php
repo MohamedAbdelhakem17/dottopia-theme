@@ -64,7 +64,7 @@
                     </p>
                 </div>
 
-                <p class="py-3 md:py-6 font-normal text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] description">
+                <p class="py-3 md:py-6 font-normal text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] description text-lg roboto-font">
                     <?= the_field("strategy_info") ?>
                 </p>
 
@@ -91,7 +91,7 @@
                     </p>
                 </div>
 
-                <p class="py-3 md:py-6 font-normal text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] description">
+                <p class="py-3 md:py-6 font-normal text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] description text-lg roboto-font">
                     <?= the_field("traffic_info") ?>
                 </p>
             </div>
@@ -118,7 +118,7 @@
                 </p>
             </div>
             <p
-                class="font-light text-[13px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] font-sub description">
+                class="font-light text-[13px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] roboto-font description">
                 Our approach to increase website traffic is methodical and results-oriented.Discover our detailed strategic process to maximize your website visits.
             </p>
 
@@ -140,7 +140,7 @@
                                 <?= $title ?>
                             </p>
 
-                            <p class="mt-4 text-sm md:text-base text-gray-700 md:w-[80%]">
+                            <p class="mt-4 text-lg text-gray-700 md:w-[80%]  roboto-font">
                                 <?= $desc ?>
                             </p>
                         </div>
