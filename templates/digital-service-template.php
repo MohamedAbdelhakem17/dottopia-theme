@@ -106,90 +106,82 @@ get_header();
 
             <?php $box_bg = get_template_directory_uri() . '/assets/images/backgrounds/box_bg.svg';  ?>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 md:mt-32 justify-center">
-
-                <!--  Box  one-->
-                <div data-aos="fade-left"
-                    class="col-span-1 relative p-6 after:content-[''] after:absolute after:right-[20px] after:top-[10px]  after:shadow-[#523C9E] after:rounded-full after:w-[0]  after:h-[0] card">
-                    <img src="<?= get_template_directory_uri() . "/assets/images/icons/inc_dig.svg" ?>"
-                        alt=" Increased Visibility and Traffic"
-                        class="absolute top-[-15px] right-[10px]  z-20 w-[110px] " />
-                    <div
-                        class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-digital/50">
-                        <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
-                            class="left-0 top-0 h-full w-fit absolute z-10 " />
-                        <div class="w-full h-full relative z-30">
-                            <div
-                                class="flex items-center gap-x-1 [&>span]:w-2 [&>span]:h-2 [&>span]:rounded-full [&>span]:bg-white/50 p-4 rounded-md">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="p-2">
-                                <h3
-                                    class="font-bold text-[#FFCE26] py-3 text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-10">
-                                    Tailored Strategies
-                                </h3>
-                                <p class="font-light text-[12px] text-white leading-[17px]">
-                                    Understanding your goals, audience, and industry to create customized digital
-                                    marketing solutions.</p>
-                            </div>
-                        </div>
+            <div class="container mx-auto px-4 py-10 md:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Box One -->
+        <div class="relative p-4 sm:p-6" data-aos="fade-left">
+            <img src="<?= get_template_directory_uri() . '/assets/images/icons/inc_dig.svg' ?>"
+                alt="Tailored Strategies"
+                class="absolute -top-6 right-2 sm:right-4 w-20 sm:w-28 z-20" />
+            <div class="relative h-full w-full bg-white/5 backdrop-blur-3xl rounded-3xl border border-digital/50 overflow-hidden">
+                <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
+                    class="absolute inset-0 h-full w-full object-cover z-10" />
+                <div class="relative z-30 p-4 sm:p-6">
+                    <div class="flex items-center gap-1.5 pb-4">
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
                     </div>
+                    <h3 class="font-bold text-[#FFCE26] text-lg sm:text-xl md:text-2xl hanuman-font mb-4 leading-tight">
+                        Tailored Strategies
+                    </h3>
+                    <p class="text-white text-xs sm:text-sm leading-relaxed">
+                        Understanding your goals, audience, and industry to create customized digital marketing solutions.
+                    </p>
                 </div>
-
-                <!--  Box Two -->
-                <div data-aos="zoom-in" class="col-span-1 relative p-4 card">
-                    <img src="<?= get_template_directory_uri() . "/assets/images/icons/re_dig.svg" ?>"
-                        alt="   Higher Credibility and Trust" class="absolute top-[-15px] right-[-10px]  z-20" />
-                    <div
-                        class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-digital/50">
-                        <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
-                            class="left-0 top-0 h-full w-fit absolute z-10" />
-                        <div class="w-full h-full relative z-30">
-                            <div
-                                class="flex items-center gap-x-1 [&>span]:w-2 [&>span]:h-2 [&>span]:rounded-full [&>span]:bg-white/50 p-4 rounded-md">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="p-2">
-                                <h3
-                                    class="font-bold text-[#FFCE26] py-3 text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-10">
-                                    Consistency </h3>
-                                <p class="font-light text-[12px] text-white leading-[17px]">
-                                    Understanding your goals, audience, and industry to create customized digital
-                                    marketing solutions.
-                                    Maintaining consistency in delivering
-                                    & posting highest quality content </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Box There -->
-                <div data-aos="fade-right" class="col-span-1 relative p-6 card">
-                    <img src="<?= get_template_directory_uri() . "/assets/images/icons/anliz_dig.svg" ?>"
-                        alt="  Long-Term Results " class="absolute top-[-15px] right-0  z-20" />
-                    <div
-                        class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-digital/50">
-                        <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
-                            class="left-0 top-0 h-full w-fit absolute z-10" />
-                        <div class="w-full h-full relative z-30">
-                            <div
-                                class="flex items-center gap-x-1 [&>span]:w-2 [&>span]:h-2 [&>span]:rounded-full [&>span]:bg-white/50 p-4 rounded-md">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="p-2">
-                                <h3
-                                    class="font-bold text-[#FFCE26] py-3 text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-10">
-                                    Measurable Results </h3>
-                                <p class="font-light text-[12px] text-white leading-[17px]">
-                                    Once your website ranks well, it can maintain its position for an extended period
-                                    while providing ongoing value
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+        </div>
+
+        <!-- Box Two -->
+        <div class="relative p-4 sm:p-6" data-aos="zoom-in">
+            <img src="<?= get_template_directory_uri() . '/assets/images/icons/re_dig.svg' ?>"
+                alt="Consistency"
+                class="absolute -top-6 right-2 sm:right-4 w-20 sm:w-24 z-20" />
+            <div class="relative h-full w-full bg-white/5 backdrop-blur-3xl rounded-3xl border border-digital/50 overflow-hidden">
+                <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
+                    class="absolute inset-0 h-full w-full object-cover z-10" />
+                <div class="relative z-30 p-4 sm:p-6">
+                    <div class="flex items-center gap-1.5 pb-4">
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                    </div>
+                    <h3 class="font-bold text-[#FFCE26] text-lg sm:text-xl md:text-2xl hanuman-font mb-4 leading-tight">
+                        Consistency
+                    </h3>
+                    <p class="text-white text-xs sm:text-sm leading-relaxed">
+                        Understanding your goals, audience, and industry to create customized digital marketing solutions. 
+                        Maintaining consistency in delivering & posting highest quality content.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Box Three -->
+        <div class="relative p-4 sm:p-6" data-aos="fade-right">
+            <img src="<?= get_template_directory_uri() . '/assets/images/icons/anliz_dig.svg' ?>"
+                alt="Measurable Results"
+                class="absolute -top-6 right-2 sm:right-4 w-20 sm:w-24 z-20" />
+            <div class="relative h-full w-full bg-white/5 backdrop-blur-3xl rounded-3xl border border-digital/50 overflow-hidden">
+                <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
+                    class="absolute inset-0 h-full w-full object-cover z-10" />
+                <div class="relative z-30 p-4 sm:p-6">
+                    <div class="flex items-center gap-1.5 pb-4">
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                        <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                    </div>
+                    <h3 class="font-bold text-[#FFCE26] text-lg sm:text-xl md:text-2xl hanuman-font mb-4 leading-tight">
+                        Measurable Results
+                    </h3>
+                    <p class="text-white text-xs sm:text-sm leading-relaxed">
+                        Once your website ranks well, it can maintain its position for an extended period while providing ongoing value.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         </div>
     </section>

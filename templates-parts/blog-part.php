@@ -1,8 +1,7 @@
 <?php
 function blog($number = 3, $color = "main")
 { ?>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-4 sm:px-6 lg:px-8">
         <?php
         $fallback_image = get_template_directory_uri() . '/assets/images/backgrounds/seo_solution.png';
         $args = array(
@@ -24,28 +23,32 @@ function blog($number = 3, $color = "main")
                 $word_count = str_word_count(strip_tags(get_the_content()));
                 $reading_time = ceil($word_count / 200);
             ?>
+                <div class="relative overflow-hidden rounded-md w-full">
+                    <!-- Image with responsive height -->
+                    <img src="<?php echo esc_url($image); ?>"
+                        alt="<?php echo esc_attr($title); ?>"
+                        class="w-full h-48 sm:h-56 md:h-auto  object-cover"
+                        loading="lazy" />
 
-                <div class="relative overflow-hidden col-span-1 rounded-md">
-
-                    <!-- Image -->
-                    <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>"
-                        class="fit-full w-full" loading="lazy" />
-
-                    <!-- Text -->
-                    <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-end px-5 py-8"
+                    <!-- Text Overlay -->
+                    <div class="absolute inset-0 flex flex-col justify-end p-4 sm:p-5"
                         style="background: var(--gradient-blog)">
-                        <p class="text-<?=$color?> text-start text-[13px] font-light py-4">
+                        <p class="text-<?php echo $color; ?> text-start text-xs sm:text-[13px] font-light py-2 sm:py-4">
                             <?php echo esc_html($category); ?>
                         </p>
-                        <h3 class="font-<?=$color?> text-white font-bold text-2xl text-start">
-                            <a href="<?php echo esc_url(get_permalink($post_id)); ?>"> <?php echo esc_html($title); ?></a>
+                        <h3 class="font-<?php echo $color; ?> text-white font-bold text-lg sm:text-xl md:text-2xl text-start">
+                            <a href="<?php echo esc_url(get_permalink($post_id)); ?>"
+                                class="hover:underline">
+                                <?php echo esc_html($title); ?>
+                            </a>
                         </h3>
-                        <p class="text-<?=$color?> text-end text-[13px]">
+                        <p class="text-<?php echo $color; ?> text-end text-xs sm:text-[13px] mt-2">
                             <?php echo esc_html($reading_time . " mins read"); ?>
                         </p>
                     </div>
                 </div>
             <?php endwhile; ?>
         <?php endif; ?>
+        <?php wp_reset_postdata(); ?>
     </div>
 <?php } ?>

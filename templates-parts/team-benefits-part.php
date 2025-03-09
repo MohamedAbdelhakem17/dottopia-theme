@@ -20,37 +20,38 @@ $benefits = [
 ];
 ?>
 
-<section class="roadblocks py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-main/50 after:shadow-custom after:rounded-full after:w-[30px]  after:h-[30px] after:translate-x-[50%]">
-    <div class="container mx-auto px-4 py-5 img-container">
-        <div>
-            <h2 class="text-center font-bold text-white text-[25px] md:text-[40px] hanuman-font mb-[14px] leading-10 title" data-aos="fade-down">
+<section class="roadblocks py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-main/50 after:shadow-custom after:rounded-full after:w-[30px] after:h-[30px] after:translate-x-[50%]">
+    <div class="container mx-auto px-4 py-5">
+        <div class="text-center">
+            <h2 class="font-bold text-white text-[25px] md:text-[40px] hanuman-font mb-[14px] leading-10" data-aos="fade-down">
                 Benefits of Joining our Team
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 md:mt-32 justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10 my-10 md:mt-32 justify-center max-w-6xl mx-auto">
             <?php foreach ($benefits as $benefit): ?>
-                <div class="col-span-1 relative p-4 card" data-aos="fade-up">
-                    <?php if (end($benefits) !== $benefit):
-                    ?>
-                        <div class="shadow-2xl w-[150px] h-[150px] absolute bg-main top-[-20px] right-[20px] rounded-full"></div>
+                <div class="relative p-4 card max-w-[400px] mx-auto" data-aos="fade-up">
+                    <?php if (end($benefits) !== $benefit): ?>
+                        <div class="shadow-2xl w-[100px] sm:w-[150px] h-[100px] sm:h-[150px] absolute bg-main top-[-20px] right-[10px] sm:right-[20px] rounded-full"></div>
                     <?php endif; ?>
 
                     <img src="<?= get_template_directory_uri() . "/assets/images/icons/" . $benefit['icon']; ?>"
                         alt="<?= $benefit['title']; ?>"
-                        class="absolute top-[-50px] right-[10px] z-20 w-[150px]" />
+                        class="absolute top-[-40px] sm:top-[-50px] right-[5px] sm:right-[10px] z-20 w-[100px] sm:w-[150px]" />
 
-                    <div class="h-full top-0 left-0 p-4 w-full sm:w-[90%] mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-main">
-                        <img src="<?= esc_url($box_bg); ?>" alt="BG" class="left-0 top-0 h-full w-fit absolute z-10" />
-                        <div class="w-full h-full relative z-30">
-                            <div class="flex items-center gap-x-1 [&>span]:w-2 [&>span]:h-2 [&>span]:rounded-full [&>span]:bg-white/50 p-4 rounded-md">
-                                <span></span><span></span><span></span>
+                    <div class="h-full p-4 bg-white/5 backdrop-blur-[40px] rounded-[30px] border border-main">
+                        <img src="<?= esc_url($box_bg); ?>" alt="BG" class="absolute left-0 top-0 h-full w-full z-10 object-cover" />
+                        <div class="relative z-30">
+                            <div class="flex items-center gap-x-1 p-4 rounded-md">
+                                <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                                <span class="w-2 h-2 rounded-full bg-white/50"></span>
+                                <span class="w-2 h-2 rounded-full bg-white/50"></span>
                             </div>
-                            <div class="p-5">
-                                <h3 class="font-bold text-[#FFCE26] text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-10">
+                            <div class="p-3 sm:p-5">
+                                <h3 class="font-bold text-[#FFCE26] text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-6 md:leading-10">
                                     <?= $benefit['title']; ?>
                                 </h3>
-                                <p class="font-light text-[12px] text-white leading-[17px]">
+                                <p class="font-light text-[12px] md:text-[14px] text-white leading-[17px]">
                                     <?= $benefit['description']; ?>
                                 </p>
                             </div>

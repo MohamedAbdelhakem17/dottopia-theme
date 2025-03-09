@@ -311,6 +311,25 @@ nav {
     left: 85% !important;
 }
 
+@media (max-width: 1200px) {
+    .swiper-button-prev {
+        left: 80% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .swiper-button-prev {
+        left: 75% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-button-prev {
+        left: 65% !important;
+    }
+}
+
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
     display: none !important;
