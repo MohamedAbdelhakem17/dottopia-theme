@@ -24,7 +24,7 @@
     ?>
 
     <!-- Start <hero> -->
-    <header class="h-screen w-full bg-black text-white">
+    <header class="w-full bg-black text-white">
 
         <div class="container h-full flex flex-col items-center justify-center mx-auto">
             <h1 class="text-6xl font-bold w-[50%] text-center leading-[70px] mx-auto"><?= $title ?></h1>

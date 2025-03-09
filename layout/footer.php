@@ -2,16 +2,15 @@
     <div class="container  mx-auto">
 
         <!-- top -->
-        <div class="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-y-0 md:space-x-8 my-10 py-3" data-aos="fade-in" data-aos-duration="1500">
+        <div class="flex flex-col items-center justify-center space-y-3 md:flex-row md:space-y-0 md:space-x-8 my-10 py-3" data-aos="fade-in" data-aos-duration="1500">
             <img src="<?= esc_url(get_template_directory_uri() . "/assets/images/whatsapp_icon.svg") ?>" alt="Whatsapp Logo" class="w-10 h-10 md:order-none " />
-            <div class="flex flex-col items-center md:flex-row md:space-x-4 marquee-parent">
-                <div class="marquee">
-                    <p class="text-center font-bold leading-[35px] text-xl md:text-4xl inline">
+            <div class="flex flex-col items-center md:flex-row md:space-x-4 marquee-parent w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="marquee overflow-hidden flex w-full">
+                    <p class="text-center font-bold leading-[35px] text-xl sm:text-2xl md:text-4xl inline whitespace-nowrap uppercase mx-2.5">
                         Ready to speak with a marketing expert?
                         <span class="text-main"> Give us a ring.</span>
                     </p>
                 </div>
-                
             </div>
             <button class="bg-main text-black py-2 px-4 rounded-md roboto-font font-light text-sm md:text-[14px] cursor-pointer ">
                 Send Message

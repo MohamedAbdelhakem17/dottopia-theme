@@ -1,28 +1,35 @@
+
 // Start Custom Slider
 (function () {
     document.addEventListener("DOMContentLoaded", function () {
-        new Swiper(".swiper-container", {
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            centeredSlides: true,
-            slidesPerView: 3,
-            spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                1024: {
-                    spaceBetween: 10,
-                },
-                768: {
-                    spaceBetween: 5,
-                },
-            },
-        });
+        new Swiper(".swiper-container",
+            {
+                className: "center",
+                centerMode: true,
+                infinite: true,
+                centerPadding: "0%",
+                slidesToShow: 1,
+                speed: 500,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            centerPadding: "10%",
+                        },
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            centerPadding: "5%",
+                        },
+                    },
+                ],
+                arrows: false,
+            }
+        );
     });
 })();
 
@@ -264,7 +271,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuToggleBtn.addEventListener("click", function () {
         menu.classList.toggle("active");
-        // alert('hello')
     });
 });
 
@@ -321,7 +327,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     loop: true,
@@ -344,29 +349,49 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
     },
 });
+
+// Footer Marquee
 function Marquee(selector, speed) {
     const parentSelector = document.querySelector(selector);
+    if (!parentSelector) return; // Safety check
+
     const clone = parentSelector.innerHTML;
     const firstElement = parentSelector.children[0];
     let i = 0;
-    console.log(firstElement);
+
+    // Add clones for seamless scrolling
     parentSelector.insertAdjacentHTML('beforeend', clone);
     parentSelector.insertAdjacentHTML('beforeend', clone);
 
-    setInterval(function () {
+    // Calculate speed based on viewport width for responsiveness
+    const getResponsiveSpeed = () => {
+        return window.innerWidth < 768 ? speed * 0.7 : speed;
+    };
+
+    let currentSpeed = getResponsiveSpeed();
+
+    // Animation function
+    function animate() {
+        if (!firstElement) return;
+
         firstElement.style.marginLeft = `-${i}px`;
         if (i > firstElement.clientWidth) {
             i = 0;
         }
-        i = i + speed;
-    }, 0);
+        i += currentSpeed;
+        requestAnimationFrame(animate);
+    }
+
+    // Start animation
+    requestAnimationFrame(animate);
+
+    // Update speed on resize
+    window.addEventListener('resize', () => {
+        currentSpeed = getResponsiveSpeed();
+    });
 }
 
-//after window is completed load
-//1 class selector for marquee
-//2 marquee speed 0.2
+// Initialize on load
 window.addEventListener('load', () => {
-    Marquee('.marquee', 0.4)
-    Marquee('.client-carousel-row-1', 0.4)
-    Marquee('client-carousel-row-2', 0.4)
+    Marquee('.marquee', 0.5);
 });

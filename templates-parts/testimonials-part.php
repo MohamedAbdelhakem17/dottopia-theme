@@ -1,6 +1,6 @@
 <?php
 
-function Testimonials($bg_color = '#ffdd6a', $quote_color = 'text-yellow-400', $testimonial_bg = '#FFF9E6', $title_class = "text-main")
+function Testimonials($bg_color = '#FFCB00', $quote_color = 'text-yellow-400', $testimonial_bg = '#FFF9E6', $title_class = "text-main")
 {
     // Fetch testimonials from ACF
     $testimonials = get_field('testimonial', "option");

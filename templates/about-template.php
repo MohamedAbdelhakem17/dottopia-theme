@@ -17,12 +17,12 @@ get_header();
         <!-- Content -->
         <div class="container w-full h-full flex items-center justify-center flex-col p-5 relative z-10 mx-auto">
             <div data-aos="zoom-in-down"
-                class="capitalize text-white text-start md:text-center text-[30px] leading-[40px] w-[90%] self-start md:self-auto md:text-5xl md:leading-[54px] lg:w-[50%] hanuman-font font-bold md:mx-auto mx-0">
+                class="capitalize text-white text-center text-[30px] leading-[40px] w-[90%] self-start md:self-auto md:text-5xl md:leading-[54px] lg:w-[50%] hanuman-font font-bold md:mx-auto mx-0">
                 <?php echo $hero_section_title; ?>
             </div>
 
-            <p
-                class="roboto-font my-4 md:my-8 font-normal text-white text-center text-[16px] md:text-2xl mx-auto w-full lg:w-[50%]" data-aos="fade-down" data-aos-delay="100">
+            <p class="roboto-font my-4 md:my-8 font-normal text-white text-center text-[16px] md:text-2xl mx-auto w-full lg:w-[50%]"
+                data-aos="fade-down" data-aos-delay="100">
                 <?php echo $hero_description; ?>
             </p>
 
@@ -44,26 +44,32 @@ get_header();
 
     <!-- Start <about Dottopia> -->
     <section class="bg-[#FFF9E5] w-full p-3">
-        <div class="container flex md:flex-row w-full lg:w-[90%] mx-auto flex-col items-center justify-around lg:p-8 gap-5">
+        <div
+            class="container flex md:flex-row w-full lg:w-[90%] mx-auto flex-col items-center justify-around lg:p-8 gap-5">
 
             <!-- Image Container -->
             <div class="w-full relative">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/dottopia.png'); ?>" alt="About Dottopia digital marketing company" class="w-fit mx-auto" />
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/dottopia.png'); ?>"
+                    alt="About Dottopia digital marketing company" class="w-fit mx-auto" />
             </div>
 
             <!-- Info Text -->
             <div class="w-full px-3">
                 <div data-aos="fade-left">
 
-                    <h3 class="text-[16px] font-bold text-main mb-[14px] title">About Dottopia </h3>
+                    <h3 class="text-[16px] font-bold text-main mb-[14px] title text-center md:text-start">About Dottopia </h3>
 
-                    <p class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 hanuman-font title">
+                    <p
+                        class="text-[25px] md:text-[30px] lg:text-[40px] font-bold leading-[50px] mt-5 hanuman-font  text-center md:text-start">
                         Who We Are
                     </p>
                 </div>
 
                 <p class="py-3 md:py-6 font-normal text-[18px] md:text-[16px] lg:w-[70%] md:w-[90%] description">
-                    At Dottopia digital marketing company, we’re a passionate team of digital innovators, creators, and strategists dedicated to helping brands shine in the digital landscape. Our journey began with a simple idea: to blend creativity with data-driven strategies to deliver impactful digital marketing solutions.
+                    At Dottopia digital marketing company, we’re a passionate team of digital innovators, creators, and
+                    strategists dedicated to helping brands shine in the digital landscape. Our journey began with a
+                    simple idea: to blend creativity with data-driven strategies to deliver impactful digital marketing
+                    solutions.
                 </p>
             </div>
         </div>
@@ -82,14 +88,13 @@ get_header();
 
             <?php $box_bg = get_template_directory_uri() . '/assets/images/backgrounds/box_bg.svg'; ?>
 
-            <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 md:mt-32 justify-center place-items-center mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 md:mt-32 justify-center place-items-center mx-auto">
 
                 <!-- Box One -->
                 <div class="col-span-1 relative  mx-auto" data-aos="fade-left">
                     <img src="<?= get_template_directory_uri() . "/assets/images/icons/vision.svg" ?>"
                         alt="Increased Visibility and Traffic"
-                        class="absolute top-[-35px] right-[-10px] z-20 w-[150px]" />
+                        class="absolute top-[-35px] right-[-10px] z-20 w-[110px]" />
                     <div
                         class="h-full top-0 left-0 p-6 w-full sm:w-[90%] max-w-md mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-main/50">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
@@ -116,7 +121,7 @@ get_header();
                 <!-- Box Two -->
                 <div class="col-span-1 relative  mx-auto" data-aos="fade-right">
                     <img src="<?= get_template_directory_uri() . "/assets/images/icons/mission.svg" ?>"
-                        alt="Higher Credibility and Trust" class="absolute top-[-25px] right-[-10px] z-20" />
+                        alt="Higher Credibility and Trust" class="absolute top-[-25px] right-[-10px] z-20 w-[110px]" />
                     <div
                         class="h-full top-0 left-0 p-6 w-full sm:w-[90%] max-w-md mx-auto bg-white/5 backdrop-blur-[40px] overflow-hidden backdrop-brightness-10 rounded-[30px] border-[1px] border-main/50">
                         <img src="<?php echo esc_url($box_bg); ?>" alt="BG"
@@ -156,12 +161,15 @@ get_header();
 
             <div class="col-span-1">
                 <div data-aos="fade-right">
-                    <h2 class="uppercase font-bold text-digital text-[22px] text-center md:text-[18px] md:text-left">Journey</h2>
-                    <h3 class="hanuman-font font-bold text-[30px] leading-[35px] text-center md:text-start md:text-[40px] md:leading-[50px] my-3">
+                    <h2 class="uppercase font-bold text-digital text-[22px] text-center md:text-[18px] md:text-left">
+                        Journey</h2>
+                    <h3
+                        class="hanuman-font font-bold text-[30px] leading-[35px] text-center md:text-start md:text-[40px] md:leading-[50px] my-3">
                         <?= esc_html($title) ?>
                     </h3>
                 </div>
-                <p class="w-full text-center md:text-start  roboto-font font-[300] mt-2 text-gray-500 md:w-[80%] text-lg">
+                <p
+                    class="w-full text-center md:text-start  roboto-font font-[300] mt-2 text-gray-500 md:w-[80%] text-lg">
                     <?= ($discription) ?>
                 </p>
             </div>
@@ -189,13 +197,13 @@ get_header();
     </section>
     <!-- End </our Journey> -->
 
-
     <!-- Start <value> -->
     <section class="py-10 px-4 container mx-auto">
         <div class="lg:w-[90%] mx-auto text-center">
             <!-- Header -->
             <div data-aos="fade-down" data-aos-offset="50">
-                <h3 class="uppercase font-bold text-main text-[22px] text-center md:text-[18px] md:text-center"> Values</h3>
+                <h3 class="uppercase font-bold text-main text-[22px] text-center md:text-[18px] md:text-center"> Values
+                </h3>
                 <p
                     class="hanuman-font font-bold text-[30px] leading-[35px] #??text-center md:text-[40px] md:leading-[50px] my-3">
                     Our Values

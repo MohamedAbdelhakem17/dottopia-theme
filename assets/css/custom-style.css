@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Start Basic Style */
 html {
     margin: 0px !important;
     padding: 0px !important;
+    overflow-x: hidden;
 }
 
 body {
@@ -11,7 +13,12 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-/* Text Family  */
+
+[data-aos] {
+    will-change: transform, opacity;
+}
+
+/* Text Family */
 .hanuman-font {
     font-family: "Hanuman", serif !important;
 }
@@ -19,6 +26,8 @@ body {
 .roboto-font {
     font-family: "Roboto", sans-serif !important;
 }
+
+/* End Basic Style */
 
 
 .roadblocks {
@@ -28,60 +37,58 @@ body {
     background-position: top center;
 }
 
-
-/* Slider Custom Style  */
-.swiper-slide-prev,
+/* Slider Custom Style */
+/* .swiper-slide-prev,
 .swiper-slide-next {
-    opacity: 0.5;
-    transform: scale(.8);
-    width: 20% !important;
+opacity: 0.5;
+transform: scale(.8);
+width: 10% !important;
 }
 
 .swiper-slide-active {
-    opacity: 1;
-    transform: scale(1.1);
-    width: 60% !important;
+opacity: 1;
+transform: scale(1.1);
+width: 80% !important;
 }
-
 
 .swiper-wrapper {
-    align-items: center !important;
+align-items: center !important;
 }
-
 
 .client-carousel-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
+position: relative;
+width: 100%;
+overflow: hidden;
+} */
+
 /* infinity gallery slider
 
 .client-carousel-row-1 {
-    animation: scroll-left 30s linear infinite;
+animation: scroll-left 30s linear infinite;
 }
 
 .client-carousel-row-2 {
-    animation: scroll-right 30s linear infinite;
+animation: scroll-right 30s linear infinite;
 }
 
 @keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
+0% {
+transform: translateX(0);
+}
 
-    100% {
-        transform: translateX(-100%);
-    }
+100% {
+transform: translateX(-100%);
+}
 }
 
 @keyframes scroll-right {
-    0% {
-        transform: translateX(-100%);
-    }
+0% {
+transform: translateX(-100%);
+}
 
-    100% {
-        transform: translateX(0);
-    }
+100% {
+transform: translateX(0);
+}
 } */
 
 /* Glow */
@@ -98,7 +105,7 @@ body {
     text-shadow: 0 0 100px #FFCE26, 0 0 60px #FFCE26, 0 0 100px #FFCE26;
 }
 
-/* Navigation Styling */
+/* Start Navbar  */
 nav {
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -123,7 +130,6 @@ nav {
     cursor: pointer;
     font-size: 24px;
 }
-
 
 /* Top-Level Menu Items */
 #menu-primary>.menu-item {
@@ -189,7 +195,6 @@ nav {
     display: block;
 }
 
-
 /* Mobile Menu */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -228,15 +233,16 @@ nav {
     }
 }
 
-/* Footer  */
+/* End Navbar  */
 
+
+/* Start Footer */
 .footer-widget h6 {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
     font-family: 'Roboto', sans-serif;
 }
-
 
 .footer-widget li {
     text-align: start;
@@ -265,16 +271,10 @@ nav {
     font-size: 18px;
 }
 
-.swiper {
-    height: 100% !important;
-}
-
-.swiper-slide {
-    width: 100% !important;
-    height: auto !important;
-}
+/* End Footer */
 
 
+/* Start Contact Us Slider */
 .swiper-pagination-custom {
     width: fit-content !important;
     bottom: 0px !important;
@@ -285,18 +285,40 @@ nav {
     justify-content: center;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50px;
+    background-color: rgba(148, 148, 148, 0.116);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next i,
+.swiper-button-prev i {
+    color: black;
+}
 
 .swiper-button-next,
 .swiper-button-prev {
     bottom: 0 !important;
-    top: auto !important;
+    top: 50% !important;
 }
 
 .swiper-button-prev {
     left: 85% !important;
 }
 
-/* Table of Content */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none !important;
+}
+
+/*End Contact Us Slider */
+
+/* Start Table of Content */
 #ez-toc-container {
     margin: 0 auto !important;
     background-color: transparent;
@@ -305,8 +327,6 @@ nav {
     border-right: 2px solid rgba(97, 97, 97, 0.1);
     padding: 0;
 }
-
-
 
 #ez-toc-container .ez-toc-title-container p.ez-toc-title {
     text-align: center;
@@ -347,22 +367,60 @@ nav {
     display: none;
 }
 
-/* Footer  */
+/* End Table of Content */
 
-.marquee-parent {
-    width: 70%;
+/* Start Blog Content */
+.post-item {
+    transition: transform 0.3s ease;
 }
 
-.marquee {
-    overflow: hidden;
-    display: flex;
+.post-item:hover {
+    transform: translateY(-5px);
 }
 
-.marquee p {
-    white-space: nowrap;
-    text-transform: uppercase ;
-    margin: 0 10px;
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .post-item {
+        margin-bottom: 1rem;
+    }
 
+    .post-item img {
+        height: 200px;
+    }
+
+    .post-item h3 {
+        font-size: 1.25rem;
+        line-height: 1.2;
+    }
 }
 
+@media (min-width: 641px) and (max-width: 767px) {
+    .post-item img {
+        height: 240px;
+    }
+}
 
+@media (min-width: 768px) and (max-width: 1023px) {
+    #blog-posts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    #blog-posts {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Ensure text remains readable on all sizes */
+.post-item .absolute {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 70%, transparent 100%);
+}
+
+/* Accessibility */
+.post-item a:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* End Blog Content */
