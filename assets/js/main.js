@@ -1,4 +1,3 @@
-
 // Start Custom Slider
 (function () {
     document.addEventListener("DOMContentLoaded", function () {
@@ -7,7 +6,7 @@
                 className: "center",
                 centerMode: true,
                 infinite: true,
-                centerPadding: "0%",
+                centerPadding: "10%",
                 slidesToShow: 1,
                 speed: 500,
                 dots: true,
@@ -33,22 +32,6 @@
     });
 })();
 
-// // Infinity Gallery Slider
-// (function () {
-//     document.addEventListener("DOMContentLoaded", function () {
-//         function startInfiniteScroll(rowClass, speed) {
-//             const row = document.querySelector(rowClass);
-//             if (!row) return;
-
-//             while (row.scrollWidth < window.innerWidth * 2) {
-//                 row.innerHTML += row.innerHTML;
-//             }
-//         }
-
-//         startInfiniteScroll(".client-carousel-row-1", 20); // Left to right scrolling
-//         startInfiniteScroll(".client-carousel-row-2", 20); // Right to left scrolling
-//     });
-// })();
 
 // FAQ Accordion
 (function () {
@@ -327,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-var swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     loop: true,
     autoplay: {

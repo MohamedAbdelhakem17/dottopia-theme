@@ -10,6 +10,9 @@ function load_single_page_template($template)
     if (is_singular('post')) {
         return get_theme_file_path('/templates/single-blog-template.php');
     }
+    if (is_singular('action_form')) {
+        return get_theme_file_path('/templates/single new inquiry.php');
+    }
     return $template;
 }
 

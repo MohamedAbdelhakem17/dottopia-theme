@@ -41,7 +41,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                             class="flex items-center gap-x-2 cursor-pointer mt-2 sm:mt-0">
                             <p class="font-normal text-xs sm:text-sm">Show Full Case</p>
                             <span
-                                class="bg-<?= esc_attr($category_slug); ?> h-6 w-6 sm:h-7 sm:w-7 rounded-full text-black flex items-center justify-center">
+                                class="bg-main h-6 w-6 sm:h-7 sm:w-7 rounded-full text-black flex items-center justify-center">
                                 <i class="fa-solid fa-arrow-right text-xs sm:text-sm"></i>
                             </span>
                         </a>
@@ -56,7 +56,7 @@ function case_studies($cases_number = 2, $background_color = "bg-main")
                                 class="w-full h-auto rounded-md object-cover max-h-[400px]" />
 
                             <!-- category button -->
-                            <h4 class="bg-<?= esc_attr(detect_color($category_slug)); ?> text-white px-3 py-1 sm:px-4 sm:py-2 
+                            <h4 class="bg-main text-white px-3 py-1 sm:px-4 sm:py-2 
                                        rounded-[50px] font-normal text-xs sm:text-sm mt-3 sm:mt-4 w-fit">
                                 <?= esc_html($category); ?>
                             </h4>

@@ -50,17 +50,31 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Table of Content (for md and larger screens) -->
-            <div class="hidden md:block md:col-span-1 md:sticky top-20 h-fit">
-                \ <div class="toc-list">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+            <!-- Table of Content and Form (Sticky Sidebar for md and larger screens) -->
+            <div class="hidden md:block md:col-span-1 md:sticky md:top-20 md:h-fit">
+                <!-- Table of Contents -->
+                <div class="toc-list">
                     <?php echo do_shortcode('[ez-toc header_label="Table of content" toggle_view="no" initial_view="show" heading_levels="2"]'); ?>
                 </div>
-            </div>
 
-            <!-- Blog content -->
-            <div class="col-span-1 md:col-span-2 [&_h2]:font-bold [&_h2]:text-2xl md:[&_h2]:text-4xl [&_h2]:w-full md:[&_h2]:w-[90%] [&_h2]:py-4 [&_p]:font-normal [&_p]:text-base md:[&_p]:text-xl [&_p]:py-4">
+                <!-- Action Form -->
+                <div class="action-form">
+                    <?php echo do_shortcode('[contact-form-7 id="b71e6e5" title="action form"]'); ?>
+                </div>
+            </div>
+            <?php echo do_shortcode('[wpforms id="512"]'); ?>
+
+            <!-- Blog Content -->
+            <div class="col-span-1 md:col-span-2 [&_h2]:font-bold [&_h2]:text-2xl md:[&_h2]:text-4xl [&_h2]:w-full md:[&_h2]:w-[90%] [&_h2]:py-4 [&_p]:font-normal [&_p]:text-base md:[&_p]:text-xl [&_p]:py-4 [&_p]:mb-5">
                 <?= $blog_content ?>
+            </div>
+        </div>
+
+        <!-- Action Form  (for small screens) -->
+        <div class="block md:hidden rounded-lg mb-6">
+            <div class="action-form">
+                <?php echo do_shortcode('[contact-form-7 id="b71e6e5" title="action form"]'); ?>
             </div>
         </div>
     </article>

@@ -59,24 +59,30 @@
 
         if ($clients): ?>
             <div class="overflow-hidden p-2">
-                <!-- First Row (Moves Left) -->
-                <div class="client-carousel-row-1 flex gap-4 my-3">
+    <!-- First Row (Moves Left to Right) -->
+    <div class="wrapper flex gap-4 my-3 whitespace-nowrap">
+        <?php $index = 1; ?>
                     <?php foreach ($clients as $client): ?>
                         <?php $image_url = esc_url($client); ?>
-                        <div class="client-logo flex items-center justify-center px-4">
-                            <img src="<?php echo $image_url; ?>" alt="Client Logo" class="object-contain">
+                        <div class="item item<?= $index ?> inline-flex items-center justify-center px-4 left-move">
+                            <img src="<?php echo $image_url; ?>" alt="Client Logo" class="w-fit p-4">
                         </div>
+                        <?php $index++; ?>
                     <?php endforeach; ?>
+            
                 </div>
-
-                <!-- Second Row (Moves Right) -->
-                <div class="client-carousel-row-2 flex gap-4 my-3">
+            
+                <!-- Second Row (Moves Right to Left) -->
+                <div class="wrapper flex gap-4 my-3 whitespace-nowrap">
+                    <?php $index = 1; ?>
                     <?php foreach (array_reverse($clients) as $client): ?>
                         <?php $image_url = esc_url($client); ?>
-                        <div class="client-logo flex items-center justify-center px-4">
-                            <img src="<?php echo $image_url; ?>" alt="Client Logo" class="object-contain">
+                        <div class="item item<?= $index ?> inline-flex items-center justify-center px-4 right-move">
+                            <img src="<?php echo $image_url; ?>" alt="Client Logo" class="w-fit p-4">
                         </div>
+                        <?php $index++; ?>
                     <?php endforeach; ?>
+            
                 </div>
             </div>
 
@@ -123,7 +129,7 @@
     <!-- End </who we are> -->
 
     <!-- Start </roadblocks> -->
-    <section class="py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-opacity-50 after:bg-purple-600 after:shadow-lg after:rounded-full after:w-[30px] after:h-[30px] after:translate-x-1/2">
+    <section class="py-10 bg-black relative after:content-[''] after:absolute after:right-0 after:top-[20%] after:bg-opacity-50 after:bg-main/50 after:shadow-custom after:rounded-full after:w-[30px] after:h-[30px] after:translate-x-1/2">
         <div class="container mx-auto px-4 py-5">
             <div class="text-center">
                 <h2 class="font-bold text-white text-2xl md:text-4xl font-hanuman mb-4 leading-10" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -135,11 +141,11 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 md:mt-32 justify-items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 md:mt-32 justify-items-center items-stretch">
                 <!-- Box One -->
-                <div class="relative p-4 w-full max-w-[350px]" data-aos="fade-left">
+                <div class="relative p-4 w-full md:col-span-1" data-aos="fade-left">
                     <div class="shadow-2xl w-[250px] h-[250px] absolute bg-purple-700 bg-opacity-90 top-[-20px] right-[50px] rounded-full" data-aos="fade-in" data-aos-delay="700"></div>
-                    <div class="relative p-4 w-full bg-white/5  backdrop-brightness-10 rounded-3xl border border-purple-500">
+                    <div class="relative p-4 w-full h-full bg-white/5  backdrop-brightness-10 rounded-3xl border border-purple-500">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/backgrounds/box_bg.svg'); ?>" alt="BG" class="absolute inset-0 h-full w-full object-cover z-10" />
                         <div class="relative z-30">
                             <div class="flex items-center gap-1 p-4">
@@ -160,9 +166,9 @@
                 </div>
 
                 <!-- Box Two -->
-                <div class="relative p-4 w-full max-w-[350px]" data-aos="zoom-in">
+                <div class="relative p-4 w-full md:col-span-1" data-aos="zoom-in">
                     <div class="shadow-2xl w-[250px] h-[250px] absolute bg-teal-500 top-[-20px] right-[50px] rounded-full" data-aos="fade-in" data-aos-delay="700"></div>
-                    <div class="relative p-4 w-full bg-white/5  backdrop-brightness-10 rounded-3xl border border-teal-500">
+                    <div class="relative p-4 w-full h-full bg-white/5  backdrop-brightness-10 rounded-3xl border border-teal-500">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/backgrounds/box_bg.svg'); ?>" alt="BG" class="absolute inset-0 h-full w-full object-cover z-10" />
                         <div class="relative z-30">
                             <div class="flex items-center gap-1 p-4">
@@ -183,8 +189,8 @@
                 </div>
 
                 <!-- Box Three -->
-                <div class="relative p-4 w-full max-w-[350px]" data-aos="fade-right">
-                    <div class="relative p-4 w-full bg-white/5  backdrop-brightness-10 rounded-3xl border border-yellow-200">
+                <div class="relative p-4 w-full md:col-span-1" data-aos="fade-right">
+                    <div class="relative p-4 w-full h-full bg-white/5  backdrop-brightness-10 rounded-3xl border border-yellow-200">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/backgrounds/box_bg.svg'); ?>" alt="BG" class="absolute inset-0 h-full w-full object-cover z-10" />
                         <div class="relative z-30">
                             <div class="flex items-center gap-1 p-4">
@@ -210,7 +216,7 @@
 
     <!-- Start <service> -->
     <section class="py-10 px-4">
-        <div class="md:w-[90%] px-5 md:px-0 mx-auto text-center" style="margin: 0 auto;">
+        <div class="container px-4 md:px-0 mx-auto text-center">
             <!-- Header -->
             <h3 class="text-[20px] md:text-[16px] font-bold  mb-[14px] md:mb-[16px] text-main hanuman-font" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">Our Services</h3>
             <p class="mb-2 md:mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] title" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -242,12 +248,12 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-4 items-center parallax mt-5">
                         <!-- Info Section -->
-                        <div class="px-4 md:px-8 text-start col-span-1 md:col-span-1 info">
+                        <div class="px-2 md:px-8 text-start col-span-1 md:col-span-1 info">
                             <h4 class="leading-[22.4px] font-[400] text-[14px]  " style="color: <?php echo $color ?>;">
                                 <?= $subTitle ?>
                             </h4>
 
-                            <p class="font-bold text-[40px] hanuman-font my-2 leading-10">
+                            <p class="font-bold text-[25px] md:text-[40px] hanuman-font my-2 leading-10">
                                 <?= $title ?>
                             </p>
 
@@ -292,10 +298,10 @@
     <!-- End </testimonials> -->
 
     <!-- Start <case studies> -->
-    <section class="bg-main px-3 py-5">
-        <div class="px-4">
+    <section class="bg-main md:px-3 py-5">
+        <div class="md:px-4">
             <!-- Header -->
-            <div class="text-center">
+            <div class="text-center px-3">
                 <h3 class="text-[16px] font-bold mb-[14px] md:mb-[16px]   title" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">Case Studies</h3>
                 <p
                     class="mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[50px] hanuman-font description" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -314,6 +320,37 @@
         </div>
     </section>
     <!-- End </case studies> -->
+
+    <!-- Start <blog> -->
+    <section class="py-5">
+        <div class="container mx-auto">
+            <!-- Header -->
+            <div class="text-center">
+                <h3 class="text-[20px] md:text-[16px] font-bold  mb-[14px] md:mb-[16px] text-main hanuman-font" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">insights</h3>
+                <p class="mb-2 md:mb-6 text-[20px] md:text-[30px] lg:text-[40px] font-bold md:leading-[40px] title" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    Recent Insights
+                </p>
+                <p
+                    class="font-light text-[13px] md:text-[16px] lg:w-[70%] md:w-[90%] mx-auto leading-[22.4px] ">
+                    Welcome to our world! At our marketing agency, we don’t just focus on marketing, we’re passionate about sharing <br class="md:blok none" /> our knowledge with our visitors.
+                </p>
+            </div>
+
+            <!-- Blogs  -->
+            <?php require_once get_template_directory() . "/templates-parts/blog-part.php";
+            blog();
+            ?>
+
+            <!-- Button -->
+            <div class="my-6 text-center">
+                <a href="<?= esc_url(home_url('/blog')); ?>"
+                    class="w-fit inline-block bg-black text-white py-2 px-6 rounded-lg text-lg font-normal">
+                    Show All
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- End </blog> -->
 
     <!-- Start <discover> -->
     <?php require_once get_template_directory() . "/templates-parts/discover-part.php" ?>
