@@ -1,37 +1,35 @@
-// Start Custom Slider
-(function () {
-    document.addEventListener("DOMContentLoaded", function () {
-        new Swiper(".swiper-container",
-            {
-                className: "center",
-                centerMode: true,
-                infinite: true,
-                centerPadding: "10%",
-                slidesToShow: 1,
-                speed: 500,
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            centerPadding: "10%",
-                        },
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            centerPadding: "5%",
-                        },
-                    },
-                ],
-                arrows: false,
+document.addEventListener('DOMContentLoaded', function () {
+    new Splide('.splide', {
+        type: 'loop',           // Loops through slides
+        padding: '10rem',        // Adjusted padding for smaller screens
+        perPage: 1,             // Default to 1 slide per view
+        perMove: 1,             // Move one slide at a time
+        autoplay: true,         // Autoplay enabled
+        interval: 5000,         // 5-second interval
+        pauseOnHover: true,     // Pause on hover
+        arrows: false,          // No arrows
+        opacity: 0.7,           // Default opacity for slides
+        gap: '1rem',            // Space between slides
+        breakpoints: {
+            1024: {             // Large screens (desktops)
+                perPage: 2,     // Show 2 slides
+                padding: '10rem', // Larger padding
+                gap: '2rem',    // Larger gap
+            },
+            768: {              // Tablets
+                perPage: 1,     // Show 1 slide
+                padding: '3rem', // Medium padding
+                gap: '1.5rem',  // Medium gap
+            },
+            480: {              // Mobile devices
+                perPage: 1,     // Show 1 slide
+                padding: '1rem', // Smaller padding
+                gap: '1rem',    // Smaller gap
             }
-        );
-    });
-})();
-
+        },
+        pagination: true,       // Enable pagination
+    }).mount();
+});
 
 // FAQ Accordion
 (function () {

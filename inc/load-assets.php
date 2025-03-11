@@ -10,6 +10,7 @@ function load_css()
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
     wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
     wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
+    wp_enqueue_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), null);
 }
 
 
@@ -25,8 +26,12 @@ function load_js()
     // Swiper Library
     wp_enqueue_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
 
+
+    wp_enqueue_script('splide-script', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true);
+
+
     // Main Script (Ensuring dependencies are loaded first)
-    wp_enqueue_script('main-script', get_template_directory_uri() . '/assets/js/main.js', array('swiper-script', 'motion-js', 'aos-js'), null, true);
+    wp_enqueue_script('main-script', get_template_directory_uri() . '/assets/js/main.js', array('swiper-script', 'motion-js', 'aos-js' , "splide-script"), null, true);
 }
 
 

@@ -47,7 +47,7 @@ $benefits = [
                                 <span class="w-2 h-2 rounded-full bg-white/50"></span>
                                 <span class="w-2 h-2 rounded-full bg-white/50"></span>
                             </div>
-                            <div class="p-3 sm:p-5">
+                            <div class="p-4 sm:p-5 md:mt-8">
                                 <h3 class="font-bold text-[#FFCE26] text-[16px] md:text-[20px] hanuman-font mb-[14px] leading-6 md:leading-10">
                                     <?= $benefit['title']; ?>
                                 </h3>

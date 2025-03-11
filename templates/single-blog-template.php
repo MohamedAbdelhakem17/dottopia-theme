@@ -63,8 +63,6 @@
                     <?php echo do_shortcode('[contact-form-7 id="b71e6e5" title="action form"]'); ?>
                 </div>
             </div>
-            <?php echo do_shortcode('[wpforms id="512"]'); ?>
-
             <!-- Blog Content -->
             <div class="col-span-1 md:col-span-2 [&_h2]:font-bold [&_h2]:text-2xl md:[&_h2]:text-4xl [&_h2]:w-full md:[&_h2]:w-[90%] [&_h2]:py-4 [&_p]:font-normal [&_p]:text-base md:[&_p]:text-xl [&_p]:py-4 [&_p]:mb-5">
                 <?= $blog_content ?>
